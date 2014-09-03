@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <title>
+      Rudy Rodriguez :: Portfolio
+    </title>
+    
+    <link rel="stylesheet" type="text/css" href="3_sheet.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+    <style>
+      div.project_title{
+        background-Color:#444444;
+        font-weight:bold;
+        color:#88CCFF;
+      }
+      
+      img.project_large_img{
+        width:95%;
+        height:40%;
+      }
+      
+      img.project_large_img:hover{
+        border:3px solid #00AAFF;
+      }
+    </style>
+  </head>
+  
+  <body bgcolor="#FFFFFF" style="background-image: url(''); font-family: 'Droid Sans', sans-serif;">
+  <div id="project_large_bg" style="position:absolute; left:0%; top:0%; height:0%; width:0%;" onclick="display_project_large_bg(0)"></div>
+  <div id="project_large" style="position:absolute; left:0%; top:0%; height:0%; width:0%; border:0px solid #8888FF;" onclick=""></div>
+  
+  <div id="contain" class="contain">
+  
+    <!-- TOP NAV -->
+    <object type="text/html" data="3_top_nav.html" style="position:fixed; top:0; left:2.5%; height:10%; width:95%; z-index: 1;">
+    <h1>ERROR:  Navigation bar did not load.</h1>
+    </object>
+    <!-- TOP NAV -->
+    
+    
+    <div id="bottom_nav" class="content" style="z-index: 0;">
+    <div style="position:absolute; left: 2.5%; top: -5%; width: 95%; background-color:#CCCCFF; color:#000000; text-align:left; z-index:5;">
+      View my entire GitHub <a href="http://www.github.com/coding-abbey">here</a>.
+    </div>
+    
+    <!-- EXAMPLE 1 -->
+    <div id="example_1" class="example" style="left: 2.5%; top: 0;">
+      <div id="example_1_image" class="example_img" style="background-image: url('nematode10.png');">
+        <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
+              <tr width=100% valign=bottom><td>
+                  <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
+                    <tr onclick="display_project_large(1)">
+                      <td align=center>
+                        LEARN MORE
+                      </td>
+                    </tr></table>
+                </td></tr>
+            </table>
+      </div>
+      
+      <div id="example_1_info" class="example_info" style="">
+      <font style="color:#000000; font-weight:bold;">Nematode Connectome</font><br>
+      <font color=#666666>R, Javascript, SQL, PHP, HTML, CSS, Ajax</font><p>
+      Interactive web-based model of the neural network of the worm <i>C. elegans</i>.
+      
+        
+      </div>
+      
+      <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,0);"><a href="http://github.com/coding-abbey/nematode_connectome">View Repository</a></div>
+    </div>
+    <!-- EXAMPLE 1 -->
+    
+    
+    <!-- EXAMPLE 2 -->
+    <div id="example_2" class="example" style="left: 35%; top: 0;">
+      <div id="example_2_image" class="example_img" style="background-image: url('nn.png');">
+        <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
+              <tr width=100% valign=bottom><td>
+                  <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
+                    <tr onclick="">
+                      <td align=center>
+                        COMING SOON
+                      </td>
+                    </tr></table>
+                </td></tr>
+            </table>
+      </div>
+      
+      <div id="example_2_info" class="example_info" style="">
+      <font style="color:#000000; font-weight:bold;">Procedural Neural Network</font><br>
+      <font color=#666666>R</font><p>
+      Scalable procedurally generated neural network.
+      </div>
+      
+      <div id="example_1_src" class="example_src" style=""><a href="http://github.com/coding-abbey/procedural_NN">View Repository</a></div>
+    </div>
+    <!-- EXAMPLE 2 -->
+    
+    </div>
+  </div>
+  
+  <div style="position:absolute; left: 2.5%; top: 65%; width: 95%; background-color:#FFFFFF; color:#00AAAA; font-size: 125%; font-weight: bold; text-align:left; z-index:5;">
+      Smaller Projects
+      <table>
+        <tr><td><a href='https://github.com/coding-abbey/LIF'>Integrate-and-Fire</a> | <font color=#666666>R</font></td></tr>
+        <tr><td><font color=#222222>Leaky Integrate-and-Fire neuron model as well as some of its derivatives.</font> <br><br></td></tr>
+        <tr><td><a href='https://github.com/coding-abbey/tiny_NN'>Perceptron</a> | <font color=#666666>R</font></td></tr>
+        <tr><td><font color=#222222>Perceptron-styled neural network. </font></td></tr>
+      </table>
+    </div>
+    
+  
+  </body>
+</html>
+
+<script>
+  var page = 1
+</script>
+
+<script>
+  // create detailed project div
+  // onclick = func...values 1:9
+  var ID = ""
+  var e = ""
+  
+  function change_ID(value){
+    ID = "project_large" + value
+    e = document.getElementById(ID)
+  }
+  
+  function display_project_large(value){
+    //unit_d_div.onclick = function() {unit_select(value)}
+    change_ID("")
+    
+    e.style.backgroundColor = "rgba(200,200,200,1)"
+    e.style.width = "90%"
+    e.style.height = "90%"
+    e.style.left = "5%"
+    e.style.top = "5%"
+    e.style.zIndex = "501"
+      
+    if (value > 0){
+      get_project_content(value)
+    } else {
+      e.innerHTML = ""
+      e.style.backgroundColor = "rgba(0,0,0,0)"
+      e.style.width = "0%"
+      e.style.height = "0%"
+      e.style.zIndex = "-1"
+    }
+    
+    change_ID("_bg")
+    display_project_large_bg(1)
+  }
+  
+  function display_project_large_bg(value){
+    if (value == 1){
+      e.innerHTML = ""
+      e.style.backgroundColor = "rgba(0,0,0,0.8)"
+      e.style.width = "100%"
+      e.style.height = "100%"
+      e.style.zIndex = "500"
+    } else {
+      e.innerHTML = ""
+      e.style.backgroundColor = "rgba(0,0,0,0)"
+      e.style.width = "0%"
+      e.style.height = "0%"
+      e.style.zIndex = "-1"
+      
+      change_ID("")
+      e.innerHTML = ""
+      e.style.backgroundColor = "rgba(0,0,0,0)"
+      e.style.width = "0%"
+      e.style.height = "0%"
+      e.style.zIndex = "-1"
+    }
+  }
+</script>
+
+<script>
+var project_img = []
+project_img[1] = "nematode10.png"
+project_img[2] = "nematode10.png"
+project_img[3] = "nematode10.png"
+
+var project_name = []
+project_name[1] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Nematode Connectome</div>\
+&nbsp;This is an interactive, web-based model, of the neural network of the nematode worm <a href='http://en.wikipedia.org/wiki/Caenorhabditis_elegans'><i>C. elegans</i></a>.  While the worm has two sexes, this model only covers the hermaphrodite."
+
+var project_tools = []
+project_tools[1] = "<div class='project_title'>Tools</div>&nbsp;R, Javascript, SQL, PHP, HTML, CSS, Ajax"
+
+var project_description = []
+project_description[1] = "\
+&nbsp;<div class='project_title'>How It Works</div>&nbsp;Users can select through any of the neurons in the connectome of the C. elegans hermaphrodite.  The program will then output information about each individual neuron in the appropriate fields as well as display on the HTML5 canvas all of its connections to other neurons in the network.\
+<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The front-end of the application is primarily written in Javascript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the Javascript via Ajax to a separate back-end PHP script.  This script then performs mySQL queries to pull data for each neuron and outputs this data in text format for the front-end Javascript to parse through.<p>&nbsp;Although SQL is used extensively, there is also considerable parsing of some of the SQL outputs by Javascript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the mySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org'>Worm Atlas</a>."
+// show same description as the readme file
+  function get_project_content(value){
+    if (value == 1){
+      e.innerHTML = "\
+      <div style='width:64%; height:100%; float:left; color:#000000; text-align:justify; border-width: 5; border-color: rgba(0,0,40,1); border-right-style: solid;'>\
+      "+project_name[value]+"\
+      <br><br>\
+      "+project_tools[value]+"\
+      <br>\
+      &nbsp;"+project_description[value]+"\
+      <hr><p style='text-align:center;'><a href='#'>View Source Code</a> || <a href='#' onclick='display_project_large_bg(0)'>Return to Portfolio</a>\
+      </div>\
+      <div style='width:35%; height:100%; border-width: 3; border-color: #8888FF; border-left-style: solid; overflow-y:auto;'><center><br>\
+      &nbsp;<a href='#'><img src="+project_img[1]+" class='project_large_img'></a> \
+      <br><br>&nbsp;<a href='#'><img src="+project_img[2]+" class='project_large_img'></a> \
+      <br><br>&nbsp;<a href='#'><img src="+project_img[3]+" class='project_large_img'></a><br><br> \
+      </div>"
+    }
+  }
+
+//document.createElement("div")
+</script>

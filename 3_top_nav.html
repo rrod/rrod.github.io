@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="3_sheet.css">
+  </head>
+  
+  <body style="font-family: 'Droid Sans', sans-serif;">
+    <!-- TOP NAV -->
+    <div id="top_nav" class="top_nav" style="height:98%; left:0%;">
+      <table class="top_nav_name_2" height=80% border=0 cellspacing=0 cellpadding=0 style='position:absolute; top:0%; height:100%;'>
+              <tr width=100% valign=bottom>
+                <td>
+                  <table class="top_nav_name_2" width=100% height=80% cellspacing=0 cellpadding=0>
+                    <tr onclick="">
+                      <td align=left style="color:#00DDDD; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; font-size: 30px; font-family: 'FreeSans';">
+                        RODOLFO <br><font color="#000000" style="font-size: 24.5px;">RODRIGUEZ</font>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+    </div>
+    <div id="top_nav_button_1_1" class="top_nav_button" style="height:50%; right:22%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
+      <table id="top_nav_button_1_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
+              <tr width=100% valign=bottom>
+                <td>
+                  <table id="top_nav_button_1_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
+                    <tr onclick="parent.location.href='3_work.html'">
+                      <td align=center>
+                        ABOUT
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+    </div>
+    <div id="top_nav_button_2_1" class="top_nav_button" style="height:50%; right:11%; border: 1px solid #000000; border-bottom-style: none;">
+      <table id="top_nav_button_2_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #6655FF;">
+              <tr width=100% valign=bottom>
+                <td>
+                  <table id="top_nav_button_2_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
+                    <tr onclick="parent.location.href='3_work.html'">
+                      <td align=center>
+                        PORTFOLIO
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+    </div>
+    <div id="top_nav_button_3_1" class="top_nav_button" style="height:50%; right:0%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
+      <table id="top_nav_button_3_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
+              <tr width=100% valign=bottom>
+                <td>
+                  <table id="top_nav_button_3_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
+                    <tr onclick="parent.location.href='3_work.html'">
+                      <td align=center>
+                        CONTACT
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+    </div>
+    <!-- TOP NAV -->
+  </body>
+</html>
+
+<script>
+//#6655FF
+    window.onload = function start(){
+      switch(parent.page) {
+        case 0:
+          change("top_nav_button_1")
+          break;
+        case 1:
+          change("top_nav_button_2")
+          break;
+        case 2:
+          change("top_nav_button_3")
+          break;
+        default:;
+          //default code block
+      }
+  }
+  
+  function change(value){
+    document.getElementById(value + '_2').style.background = ""
+    document.getElementById(value + '_3').style.color = "#00AAAA"
+    document.getElementById(value + '_3').className = ""
+  }
+</script>
