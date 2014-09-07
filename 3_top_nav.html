@@ -20,12 +20,12 @@
               </tr>
             </table>
     </div>
-    <div id="top_nav_button_1_1" class="top_nav_button" style="height:50%; right:22%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
+    <div id="top_nav_button_1_1" class="top_nav_button" style="height:50%; right:23%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
       <table id="top_nav_button_1_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
               <tr width=100% valign=bottom>
                 <td>
                   <table id="top_nav_button_1_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
-                    <tr onclick="parent.location.href='3_work.html'">
+                    <tr onclick="parent.location.href='3_about.html'">
                       <td align=center>
                         ABOUT
                       </td>
@@ -35,8 +35,8 @@
               </tr>
             </table>
     </div>
-    <div id="top_nav_button_2_1" class="top_nav_button" style="height:50%; right:11%; border: 1px solid #000000; border-bottom-style: none;">
-      <table id="top_nav_button_2_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #6655FF;">
+    <div id="top_nav_button_2_1" class="top_nav_button" style="height:50%; right:12%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
+      <table id="top_nav_button_2_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
               <tr width=100% valign=bottom>
                 <td>
                   <table id="top_nav_button_2_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
@@ -50,12 +50,12 @@
               </tr>
             </table>
     </div>
-    <div id="top_nav_button_3_1" class="top_nav_button" style="height:50%; right:0%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
+    <div id="top_nav_button_3_1" class="top_nav_button" style="height:50%; right:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
       <table id="top_nav_button_3_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
               <tr width=100% valign=bottom>
                 <td>
                   <table id="top_nav_button_3_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
-                    <tr onclick="parent.location.href='3_work.html'">
+                    <tr onclick="parent.location.href='3_contact.html'">
                       <td align=center>
                         CONTACT
                       </td>
@@ -88,6 +88,11 @@
   }
   
   function change(value){
+    document.getElementById(value + '_1').style.borderTopStyle = "solid"
+    document.getElementById(value + '_1').style.borderBottomStyle = "none"
+    document.getElementById(value + '_1').style.borderLeftStyle = "solid"
+    document.getElementById(value + '_1').style.borderRightStyle = "solid"
+    
     document.getElementById(value + '_2').style.background = ""
     document.getElementById(value + '_3').style.color = "#00AAAA"
     document.getElementById(value + '_3').className = ""
