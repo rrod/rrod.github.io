@@ -53,7 +53,7 @@
     
     <!-- EXAMPLE 1 -->
     <div id="example_1" class="example" style="left: 2.5%; top: 0;">
-      <div id="example_1_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/wpsxj119yioatlp/nematode.png?dl=0');">
+      <div id="example_1_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/d02apashpib19xe/nematode_01.png?dl=0');">
         <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
               <tr width=100% valign=bottom><td>
                   <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
@@ -122,7 +122,7 @@
       <div id="example_3_info" class="example_info" style="">
       <font style="color:#000000; font-weight:bold;">fMRI Image Analysis</font><br>
       <font color=#666666>R</font><p>
-      Able to analyze large image repositories and export this data.
+      Analyzes images for relevant data.
       </div>
       
       <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/fMRI">View Repository</a></div>
@@ -162,9 +162,9 @@
         <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
               <tr width=100% valign=bottom><td>
                   <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                    <tr onclick="display_project_large(5)">
+                    <tr onclick="">
                       <td align=center>
-                        LEARN MORE
+                        COMING SOON
                       </td>
                     </tr></table>
                 </td></tr>
@@ -177,7 +177,7 @@
       Simple 2D games written heavily in Javascript.
       </div>
       
-      <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);">View Repository (<a href="http://github.com/rrod/LIF">Left</a>, <a href="http://github.com/rrod/tiny_NN">Right</a>)</div>
+      <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);">View Repository (<a href="#">Left</a>, <a href="#">Right</a>)</div>
     </div>
     <!-- EXAMPLE 5 -->
     
@@ -268,7 +268,7 @@ project_name[2] = "<div class='project_title' style='font-size:150%; color:#FFCC
 project_name[3] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>fMRI Image Analysis</div>\
 &nbsp;Detects differences in color to determine approximate activity levels of the brain."
 project_name[4] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Neuron Models</div>\
-&nbsp;"
+&nbsp;This is two different, but nearly identical projects.  Each of the projects represents a type of neuron model to be tested with different neural network architectures."
 project_name[5] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Procedural Neural Network</div>\
 &nbsp;"
 
@@ -285,22 +285,22 @@ project_description[1] = "\
 <br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The front-end of the application is primarily written in Javascript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the Javascript via Ajax to a separate back-end PHP script.  This script then performs mySQL queries to pull data for each neuron and outputs this data in text format for the front-end Javascript to parse through.<p>&nbsp;Although SQL is used extensively, there is also considerable parsing of some of the SQL outputs by Javascript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the mySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org'>Worm Atlas</a>."
 project_description[2] = "\
 &nbsp;<div class='project_title'>How It Works</div>&nbsp;Upon activation, the script will generate the neural network.  It will also create a visual representation of the network.  Blue arrows indicate excitatory synapses whereas red arrows indicate inhibitory synapses.  The direction of the arrows also indicate the direction of axonal projection.  Circles represent the neuron cell bodies themselves, and they are individually labeled as one of three types of neurons:  (S) sensory, (I) interneruon, and (M) motor neuron.\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The project was written entirely in R.  Each neuron is a list object containing many variables.  The plot function is used to draw on to create the visual representation."
+<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The project was written entirely in R.  The user will specify the number of neurons to be contained in the network (minimum of three neurons) and the network will scale to match.  Each neuron is represented as a list object containing different variable types, for example cell type and number of synapses.  The network is then visually represented by drawing with the plot function."
 project_description[3] = "\
 &nbsp;<div class='project_title'>How It Works</div>&nbsp;Users simply select the file(s) to be analyized.  The script will then calculate the approximate levels of activity.\
 <br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The script scans each image pixel-by-pixel looking for RGB values.  These values are stored in matrices which are then calculated against each other to determine specific values for each color."
 project_description[4] = "\
-&nbsp;<div class='project_title'>How It Works</div>&nbsp;\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;"
+&nbsp;<div class='project_title'>How It Works</div>&nbsp;Users will be able to specify the type of neuron model and network motif to be used.  The script will then run the program based on these parameters and display the progress of the network activity.\
+<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The scripts are written in R.  Each neuron is represented by a class object, featuring synapses, activity level, and model function.  One or more types of these neuron models are then strung together based on the network architecture (feedforward or circular).  Individual neuron activity levels are drawn on plots, representing membrane voltage vs time."
 project_description[5] = "\
 &nbsp;<div class='project_title'>How It Works</div>&nbsp;\
 <br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;"
 // show same description as the readme file
   function get_project_content(value){
     if (value == 1){
-      var img_1 = "https://dl.dropboxusercontent.com/s/wpsxj119yioatlp/nematode.png?dl=0"
-      var img_2 = "https://dl.dropboxusercontent.com/s/wpsxj119yioatlp/nematode.png?dl=0"
-      var img_3 = "https://dl.dropboxusercontent.com/s/wpsxj119yioatlp/nematode.png?dl=0"
+      var img_1 = "https://dl.dropboxusercontent.com/s/d02apashpib19xe/nematode_01.png?dl=0"
+      var img_2 = "https://dl.dropboxusercontent.com/s/b6k4ztz0m2lzwar/nematode_02.png?dl=0"
+      var img_3 = "https://dl.dropboxusercontent.com/s/vfaxxiby6drican/nematode_3.png?dl=0"
     }
     if (value == 2){
       var img_1 = "https://dl.dropboxusercontent.com/s/fmkkomhoe41hr1p/procedural_NN_01.png?dl=0"
