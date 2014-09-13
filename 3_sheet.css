@@ -80,7 +80,7 @@
         color: #FFFFFF;
         text-align: center;
         width: 100%;
-        height: 90%; /* change this to 90% for vertical scroll (add y-scroll: no???*/
+        height: 90%;
         left: 0;
         top: 15%;
       }
