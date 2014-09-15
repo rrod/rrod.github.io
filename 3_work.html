@@ -9,9 +9,25 @@
     
     <style>
       div.project_title{
-        background-Color:#444444;
+        background-Color:#FFFFFF;
         font-weight:bold;
         color:#88CCFF;
+        border: 1px solid #000000;
+        border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
+      }
+      
+      div.project_title_text{
+        background-Color:#FFFFFF;
+        font-weight:bold;
+        color:#FF00FF;
+        font-size: 100%;
+        border: 1px solid #000000;
+        border-bottom-style: none;
+        position: fixed;
+        left: 6%;
+        
       }
       
       img.project_large_img{
@@ -199,7 +215,7 @@
       <div id="example_6_info" class="example_info" style="">
       <font style="color:#000000; font-weight:bold;">Neural Metrics</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/neuron_predict/main.html">Try Me</a>)<br>
       <font color=#666666>Javascript, d3.js, HTML, CSS</font><p>
-      An evolution of the "Neuron Models" project, but written as a web application.  It shows various metrics of the network and neurons in the network.
+      An evolution of the "Neuron Models" project, but written as a web application with improved visuals.  It shows various metrics of the network and neurons in the network.
       </div>
       
       <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/neuron_predict">View Repository</a></div>
@@ -233,7 +249,7 @@
     change_ID("")
     
     e.style.position = "fixed"
-    e.style.backgroundColor = "rgba(200,200,200,1)"
+    e.style.backgroundColor = "rgba(255,255,255,1)"
     e.style.width = "90%"
     e.style.height = "90%"
     e.style.left = "5%"
@@ -286,86 +302,130 @@ project_img[2] = "nematode10.png"
 project_img[3] = "nematode10.png"
 
 var project_name = []
-project_name[1] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Nematode Connectome</div>\
-&nbsp;This is an interactive, web-based model, of the neural network of the nematode worm <a href='http://en.wikipedia.org/wiki/Caenorhabditis_elegans'><i>C. elegans</i></a>.  While the worm has two sexes, this model only covers the hermaphrodite."
-project_name[2] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Procedural Neural Network</div>\
-&nbsp;This is a <a href='http://en.wikipedia.org/wiki/Procedural_generation'>procedurally-generated</a> neural network comprised of random neurons.  Each neuron is based on real-world neurons."
+project_name[1] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
+<td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Nematode Connectome&nbsp;&nbsp;&nbsp;</td></tr></table>\
+<table><tr><td><br>This is an interactive, web-based model, of the neural network of the nematode worm <a href='http://en.wikipedia.org/wiki/Caenorhabditis_elegans'><i>C. elegans</i></a>.  While the worm has two sexes, this model only covers the hermaphrodite.</td></tr></table>"
+project_name[2] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
+<td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Procedural Neural Network&nbsp;&nbsp;&nbsp;</td></tr></table>\
+<table><tr><td><br>This is a <a href='http://en.wikipedia.org/wiki/Procedural_generation'>procedurally-generated</a> neural network comprised of random neurons.  Each neuron is based on real-world neurons.</td></tr></table>"
 project_name[3] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>fMRI Image Analysis</div>\
 &nbsp;Detects differences in color to determine approximate activity levels of the brain."
-project_name[4] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Neuron Models</div>\
-&nbsp;This is two different, but nearly identical projects.  Each of the projects represents a type of neuron model to be tested with different neural network architectures."
+project_name[4] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
+<td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Neuron Models&nbsp;&nbsp;&nbsp;</td></tr></table>\
+<table><tr><td><br>This is two different, but nearly identical projects.  Each of the projects represents a type of neuron model to be tested with different neural network architectures.</td></tr></table>"
 project_name[5] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Procedural Neural Network</div>\
 &nbsp;"
-project_name[6] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>Neural Metrics</div>\
-&nbsp;An evolution of the 'Neuron Models' project, but written as a web application. It shows various metrics of the network and neurons in the network."
+project_name[6] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
+<td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Neural Metrics&nbsp;&nbsp;&nbsp;</td></tr></table>\
+<table><tr><td><br>An evolution of the 'Neuron Models' project, but written as a web application. It shows various metrics of the network and neurons in the network.</td></tr></table>"
 
 var project_tools = []
-project_tools[1] = "<div class='project_title'>Tools</div>&nbsp;R, Javascript, SQL, PHP, HTML, CSS, Ajax"
-project_tools[2] = "<div class='project_title'>Tools</div>&nbsp;R"
-project_tools[3] = "<div class='project_title'>Tools</div>&nbsp;R"
-project_tools[4] = "<div class='project_title'>Tools</div>&nbsp;R"
-project_tools[5] = "<div class='project_title'>Tools</div>&nbsp;Javascript, HTML, CSS"
-project_tools[6] = "<div class='project_title'>Tools</div>&nbsp;Javascript, d3.js, HTML, CSS"
+project_tools[1] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+R, Javascript, SQL, PHP, HTML, CSS, Ajax\
+</td></tr></table>"
+project_tools[2] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+R\
+</td></tr></table>"
+project_tools[3] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+R\
+</td></tr></table>"
+project_tools[4] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+R\
+</td></tr></table>"
+project_tools[5] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Javascript, HTML, CSS\
+</td></tr></table>"
+project_tools[6] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Javascript, d3.js, HTML, CSS\
+</td></tr></table>"
 
 var project_description = []
-project_description[1] = "\
-&nbsp;<div class='project_title'>How It Works</div>&nbsp;Users can select through any of the neurons in the connectome of the C. elegans hermaphrodite.  The program will then output information about each individual neuron in the appropriate fields as well as display on the HTML5 canvas all of its connections to other neurons in the network.\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The front-end of the application is primarily written in Javascript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the Javascript via Ajax to a separate back-end PHP script.  This script then performs mySQL queries to pull data for each neuron and outputs this data in text format for the front-end Javascript to parse through.<p>&nbsp;Although SQL is used extensively, there is also considerable parsing of some of the SQL outputs by Javascript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the mySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org'>Worm Atlas</a>."
-project_description[2] = "\
-&nbsp;<div class='project_title'>How It Works</div>&nbsp;Upon activation, the script will generate the neural network.  It will also create a visual representation of the network.  Blue arrows indicate excitatory synapses whereas red arrows indicate inhibitory synapses.  The direction of the arrows also indicate the direction of axonal projection.  Circles represent the neuron cell bodies themselves, and they are individually labeled as one of three types of neurons:  (S) sensory, (I) interneruon, and (M) motor neuron.\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The project was written entirely in R.  The user will specify the number of neurons to be contained in the network (minimum of three neurons) and the network will scale to match.  Each neuron is represented as a list object containing different variable types, for example cell type and number of synapses.  The network is then visually represented by drawing with the plot function."
+project_description[1] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Users can select through any of the neurons in the connectome of the C. elegans hermaphrodite.  The program will then output information about each individual neuron in the appropriate fields as well as display on the HTML5 canvas all of its connections to other neurons in the network.</td></tr></table><br><br>\
+<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+The front-end of the application is primarily written in Javascript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the Javascript via Ajax to a separate back-end PHP script.  This script then performs mySQL queries to pull data for each neuron and outputs this data in text format for the front-end Javascript to parse through.<p>&nbsp;Although SQL is used extensively, there is also considerable parsing of some of the SQL outputs by Javascript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the mySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org'>Worm Atlas</a>.</td></tr></table>"
+project_description[2] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Upon activation, the script will generate the neural network.  It will also create a visual representation of the network.  Blue arrows indicate excitatory synapses whereas red arrows indicate inhibitory synapses.  The direction of the arrows also indicate the direction of axonal projection.  Circles represent the neuron cell bodies themselves, and they are individually labeled as one of three types of neurons:  (S) sensory, (I) interneruon, and (M) motor neuron.</td></tr></table><br><br>\
+<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+The project was written entirely in R.  The user will specify the number of neurons to be contained in the network (minimum of three neurons) and the network will scale to match.  Each neuron is represented as a list object containing different variable types, for example cell type and number of synapses.  The network is then visually represented by drawing with the plot function.</td></tr></table>"
 project_description[3] = "\
 &nbsp;<div class='project_title'>How It Works</div>&nbsp;Users simply select the file(s) to be analyized.  The script will then calculate the approximate levels of activity.\
 <br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The script scans each image pixel-by-pixel looking for RGB values.  These values are stored in matrices which are then calculated against each other to determine specific values for each color."
-project_description[4] = "\
-&nbsp;<div class='project_title'>How It Works</div>&nbsp;Users will be able to specify the type of neuron model and network motif to be used.  The script will then run the program based on these parameters and display the progress of the network activity.\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The scripts are written in R.  Each neuron is represented by a class object, featuring synapses, activity level, and model function.  One or more types of these neuron models are then strung together based on the network architecture (feedforward or circular).  Individual neuron activity levels are drawn on plots, representing membrane voltage vs time."
+project_description[4] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Users will be able to specify the type of neuron model and network motif to be used.  The script will then run the program based on these parameters and display the progress of the network activity.</td></tr></table><br><br>\
+<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+The scripts are written in R.  Each neuron is represented by a class object, featuring synapses, activity level, and model function.  One or more types of these neuron models are then strung together based on the network architecture (feedforward or circular).  Individual neuron activity levels are drawn on plots, representing membrane voltage vs time.</td></tr></table>"
 project_description[5] = "\
 &nbsp;<div class='project_title'>How It Works</div>&nbsp;\
 <br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;"
-project_description[6] = "\
-&nbsp;<div class='project_title'>How It Works</div>&nbsp;Users will be able to define network attributes, including neuron models.  The application will then visually display this information and provide some metrics about the network.  Users can then select different views of the network.\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The application is written almost entirely in Javascript.  <a href='http://www.d3js.org'>D3.js</a> is used to visualize the network information in the form of graphs."
+project_description[6] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Users will be able to define network attributes, including neuron models.  The application will then visually display this information and provide some metrics about the network.  Users can then select different views of the network.</td></tr></table><br><br>\
+<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+The application is written almost entirely in Javascript.  <a href='http://www.d3js.org'>D3.js</a> is used to visualize the network information in the form of graphs.</td></tr></table>"
 // show same description as the readme file
   function get_project_content(value){
     if (value == 1){
       var img_1 = "https://dl.dropboxusercontent.com/s/d02apashpib19xe/nematode_01.png?dl=0"
       var img_2 = "https://dl.dropboxusercontent.com/s/b6k4ztz0m2lzwar/nematode_02.png?dl=0"
       var img_3 = "https://dl.dropboxusercontent.com/s/vfaxxiby6drican/nematode_3.png?dl=0"
+      
+      project_url = "http://www.github.com/rrod/nematode_connectome"
     }
     if (value == 2){
       var img_1 = "https://dl.dropboxusercontent.com/s/fmkkomhoe41hr1p/procedural_NN_01.png?dl=0"
       var img_2 = "https://dl.dropboxusercontent.com/s/op3sh8q76ostl0w/procedural_NN_02.png?dl=0"
       var img_3 = "https://dl.dropboxusercontent.com/s/t9o4glux5726pz1/procedural_NN_03.png?dl=0"
+      
+      project_url = "http://www.github.com/rrod/procedural_NN"
     }
     if (value == 3){
       var img_1 = ""
       var img_2 = ""
       var img_3 = ""
+      
+      project_url = "http://www.github.com/rrod/MRI"
     }
     if (value == 4){
       var img_1 = "https://dl.dropboxusercontent.com/s/shucn5hjwabvr6i/neuron_models_4.png?dl=0"
       var img_2 = "https://dl.dropboxusercontent.com/s/shucn5hjwabvr6i/neuron_models_4.png?dl=0"
       var img_3 = "https://dl.dropboxusercontent.com/s/shucn5hjwabvr6i/neuron_models_4.png?dl=0"
+      
+      project_url = "http://www.github.com/rrod/nematode_connectome"
     }
     if (value == 5){
       var img_1 = ""
       var img_2 = ""
       var img_3 = ""
+      
+      project_url = "http://www.github.com/rrod/nematode_connectome"
     }
     if (value == 6){
       var img_1 = "https://dl.dropboxusercontent.com/s/acezat43vaulewl/neuron_predict_01.png?dl=0"
       var img_2 = "https://dl.dropboxusercontent.com/s/yzriknrqrpyk06q/neuron_predict_02.png?dl=0"
       var img_3 = "https://dl.dropboxusercontent.com/s/kmm592hiwfhy2hi/neuron_predict_03.png?dl=0"
+      
+      project_url = "http://www.github.com/rrod/nematode_connectome"
     }
       e.innerHTML = "\
-      <div style='width:64%; height:100%; float:left; color:#000000; text-align:justify; border-width: 5; border-color: rgba(0,0,40,1); border-right-style: solid;'>\
+      <div style='width:64%; height:100%; float:left; color:#000000; text-align:justify; border-width: 5; border-color: rgba(0,0,40,1); border-right-style: solid; overflow-y:auto;'>\
       "+project_name[value]+"\
       <br><br>\
       "+project_tools[value]+"\
       <br>\
       &nbsp;"+project_description[value]+"\
-      <hr><p style='text-align:center;'><a href='#'>View Source Code</a> || <a href='#' onclick='display_project_large_bg(0)'>Return to Portfolio</a>\
+      <hr><p style='text-align:center;'><a href='#' onclick='display_project_large_bg(0)'>Return to Portfolio</a>\
       </div>\
       <div style='width:35%; height:100%; border-width: 3; border-color: #8888FF; border-left-style: solid; overflow-y:auto;'><center><br>\
       &nbsp;<a href='#'><img src="+img_1+" class='project_large_img'></a> \
