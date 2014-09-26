@@ -126,9 +126,9 @@
         <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
               <tr width=100% valign=bottom><td>
                   <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                    <tr onclick="">
+                    <tr onclick="display_project_large(3)">
                       <td align=center>
-                        COMING SOON
+                        LEARN MORE
                       </td>
                     </tr></table>
                 </td></tr>
@@ -137,11 +137,11 @@
       
       <div id="example_3_info" class="example_info" style="">
       <font style="color:#000000; font-weight:bold;">fMRI Image Analysis</font><br>
-      <font color=#666666>R, Javacript, PHP, HTML, CSS</font><p>
+      <font color=#666666>R, Bioconductor/EBImage, Javacript, PHP, HTML, CSS</font><p>
       Web application using PHP / R backend.  Analyzes images for relevant data.  Example fMRI image credit Wikipedia.
       </div>
       
-      <div id="example_1_src" class="example_src" style=""><a href="#">View Repository</a></div>
+      <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/fmri">View Repository</a></div>
     </div>
     <!-- EXAMPLE 3 -->
     
@@ -193,7 +193,7 @@
       Simple 2D games written heavily in Javascript.
       </div>
       
-      <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);">View Repository (<a href="#">Left</a>, <a href="#">Right</a>)</div>
+      <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><!--View Repository (<a href="#">Left</a>, <a href="#">Right</a>)--></div>
     </div>
     <!-- EXAMPLE 5 -->
     
@@ -310,8 +310,10 @@ project_name[2] = "<table style='position:relative; top:1%; border: 1px solid #0
 <td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
 Procedural Neural Network&nbsp;&nbsp;&nbsp;</td></tr></table>\
 <table><tr><td><br>This is a <a href='http://en.wikipedia.org/wiki/Procedural_generation'>procedurally-generated</a> neural network comprised of random neurons.  Each neuron is based on real-world neurons.</td></tr></table>"
-project_name[3] = "<div class='project_title' style='font-size:150%; color:#FFCC88;'>fMRI Image Analysis</div>\
-&nbsp;Detects differences in color to determine approximate activity levels of the brain."
+project_name[3] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
+<td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+fMRI Image Analysis&nbsp;&nbsp;&nbsp;</td></tr></table>\
+<table><tr><td><br>Web application using PHP / R backend.  Analyzes images for relevant data by detecting differences in color to determine approximate activity levels of the brain.  Example fMRI image credit Wikipedia.</td></tr></table>"
 project_name[4] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
 <td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
 Neuron Models&nbsp;&nbsp;&nbsp;</td></tr></table>\
@@ -331,7 +333,7 @@ project_tools[2] = "<table style='position:relative; top:1%; border: 1px solid #
 R\
 </td></tr></table>"
 project_tools[3] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
-R\
+R, Bioconductor/EBImage, Javacript, PHP, HTML, CSS\
 </td></tr></table>"
 project_tools[4] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
 R\
@@ -356,9 +358,12 @@ Upon activation, the script will generate the neural network.  It will also crea
 <table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
 Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
 The project was written entirely in R.  The user will specify the number of neurons to be contained in the network (minimum of three neurons) and the network will scale to match.  Each neuron is represented as a list object containing different variable types, for example cell type and number of synapses.  The network is then visually represented by drawing with the plot function.</td></tr></table>"
-project_description[3] = "\
-&nbsp;<div class='project_title'>How It Works</div>&nbsp;Users simply select the file(s) to be analyized.  The script will then calculate the approximate levels of activity.\
-<br>&nbsp;<div class='project_title'>Technical Details</div>&nbsp;The script scans each image pixel-by-pixel looking for RGB values.  These values are stored in matrices which are then calculated against each other to determine specific values for each color."
+project_description[3] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+Users simply select the file(s) to be analyzed.  The script will then calculate the approximate levels of activity.  Analyses are output on the left-hand panel and the image of interest is shown on the right-hand panel.</td></tr></table><br><br>\
+<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
+Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
+The R script scans each image pixel-by-pixel looking for RGB values.  These values are stored in matrices which are then calculated against each other to determine specific values for each color.<br><br>Upon running the PHP webpage, the page makes a call to the system to run the script.  The script performs the analyses, and outputs the data in the form of Javascript.  This Javascript is executed on the webpage to populate the left and right data panels.</td></tr></table>"
 project_description[4] = "<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
 How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
 Users will be able to specify the type of neuron model and network motif to be used.  The script will then run the program based on these parameters and display the progress of the network activity.</td></tr></table><br><br>\
@@ -373,7 +378,7 @@ How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
 Users will be able to define network attributes, including neuron models.  The application will then visually display this information and provide some metrics about the network.  Users can then select different views of the network.</td></tr></table><br><br>\
 <table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
 Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>\
-The application is written almost entirely in Javascript.  <a href='http://www.d3js.org'>D3.js</a> is used to visualize the network information in the form of graphs.</td></tr></table>"
+The application is written almost entirely in Javascript, with HTML/CSS providing styling.  <a href='http://www.d3js.org'>D3.js</a> is used to visualize the network information in the form of graphs.  Each neuron has its own graph as each level of activity is different for every cell.  While only two graphs are viewable at a time, any of the neurons graphs may be viewed via the selection menu.<br><br>Metrics are provided on the left-hand panel, right below the user controls, and contain values for every neuron as well as the network itself.</td></tr></table>"
 // show same description as the readme file
   function get_project_content(value){
     if (value == 1){
@@ -391,9 +396,9 @@ The application is written almost entirely in Javascript.  <a href='http://www.d
       project_url = "http://www.github.com/rrod/procedural_NN"
     }
     if (value == 3){
-      var img_1 = ""
-      var img_2 = ""
-      var img_3 = ""
+      var img_1 = "https://dl.dropboxusercontent.com/s/zuu31bgiy9yuhee/fmri_01.jpg?dl=0"
+      var img_2 = "https://dl.dropboxusercontent.com/s/zuu31bgiy9yuhee/fmri_01.jpg?dl=0"
+      var img_3 = "https://dl.dropboxusercontent.com/s/zuu31bgiy9yuhee/fmri_01.jpg?dl=0"
       
       project_url = "http://www.github.com/rrod/MRI"
     }
