@@ -1,0 +1,186 @@
+a:link {color:#0088FF; text-decoration:none;}
+a:visited {color:#0088FF; text-decoration:none;}
+a:hover{color:#88AAFF; text-decoration:underline;}
+a:active {color:#FF0000; text-decoration:none;}
+
+div.contain{
+  position: absolute;
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+div.top_nav{
+  position: absolute;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  top: 0;
+  border: 1px solid black;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  /* border-bottom-style: none; */
+  z-index: 3;
+}
+
+div.top_nav_button{
+  position: fixed;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  text-align: center;
+  width: 10%;
+  height: 10%;
+  right: 0;
+  bottom: 1;
+  z-index: 5;
+}
+
+.top_nav_button a:link{
+  color:#00FF00;
+  text-decoration: none;
+}
+.top_nav_button a:visited{
+  color:#00FF00;
+  text-decoration: none;
+}
+.top_nav_button a:active{
+  color:#00FF00;
+  text-decoration: none;
+}
+.top_nav_button a:hover{
+  div.background-color: #AAFFFF;
+  color:#FFFF00;
+  text-decoration: none;
+}
+
+.top_nav_button_link tr:hover { background-color: #DDDDDD; }
+.other_nav_button_link tr:hover { background-color: #88AAFF; }
+
+div.top_nav_button_2{
+  position: fixed;
+  background-color: #AAFFFF;
+  color: #000000;
+  text-align: center;
+  width: 10%;
+  height: 10%;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+
+div.content{
+  position: absolute;
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  height: 90%;
+  left: 0;
+  top: 15%;
+}
+
+
+/* WORK.HTML CSS */
+div.project_title{
+  background-Color:#FFFFFF;
+  font-weight:bold;
+  color:#88CCFF;
+  border: 1px solid #000000;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+div.project_title_text{
+  background-Color:#FFFFFF;
+  font-weight:bold;
+  color:#FF00FF;
+  font-size: 100%;
+  border: 1px solid #000000;
+  border-bottom-style: none;
+  position: fixed;
+  left: 6%;
+
+}
+
+img.project_large_img{
+  width:95%;
+  height:40%;
+}
+
+img.project_large_img:hover{
+  border:3px solid #00AAFF;
+}
+
+/* WORK.HTML CSS */
+div.example{
+  position: relative;
+  background-color: #FFF;
+  color: #FFFFFF;
+  text-align: center;
+  /*width: 100%;*/
+  width: 100%;
+  /*height: 100%;*/ /* IT MUST BE THIS, IT CANT BE 300 LIKE IT IS BELOW */
+  height: 400;
+  left: 0;
+  top: 0;
+}
+
+div.example_img{
+  position: relative;
+  background-color: #222222;
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  height: 65%;
+  left: 0;
+  top: 0;
+  background-size: 100% 100%;
+  z-index: 0;
+}
+
+.example_img_2 tr:hover {
+  background: rgba(125,125,125,0.6);
+  color: rgba(0,255,255,1);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /*font-size: 250%;*/ /* LEARN MORE = ENLARGED...SMALL WITHOUT THIS */
+  z-index: 0;
+  }
+
+div.example_info{
+  position: absolute;
+  background-color: #FFFFFF;
+  color: #222222;
+  text-align: left;
+  width: 100%;
+  /*height: 35%;*/
+  left: 0;
+  top: 65%;
+}
+
+div.example_src{
+  position: absolute;
+  color: #FFFFFF;
+  text-align: right;
+  /*width: 12%;*/
+  height: 6%;
+  right: 0%;
+  /*right: 6%;*/
+  top: 65%;
+}
+
+div.example_src_img{
+  position: absolute;
+  color: #FFFFFF;
+  text-align: right;
+  width: 20%;
+  height: 6%;
+  right: 0;
+  top: 66%;
+}
