@@ -93,7 +93,7 @@
 
             <div id="example_1_info" class="example_info">
             <font style="color:#000000; font-weight:bold;">Nematode Connectome</font><br>
-            <font color=#666666><!--R, JavaScript, SQL, PHP, HTML, CSS-->R, SQL, PHP, JavaScript, HTML5</font><p>
+            <font color=#666666><!--R, JavaScript, MySQL, PHP, HTML, CSS-->R, MySQL, PHP, JavaScript, HTML5</font><p>
             Interactive web-based model of the neural network of the worm <i>C. elegans</i>.
             </div>
 
@@ -180,7 +180,7 @@
 
         <td>
           <div id="example_8" class="example">
-            <div id="example_8_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/cx37m8ph3wzky54/tmp_ffmpeg11.png?dl=0');">
+            <div id="example_8_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/jdhk2kbbjjoz9gc/tmp_ffmpeg22.png?dl=0');">
               <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
                     <tr width=100% valign=bottom><td>
                         <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
@@ -495,7 +495,7 @@ project_name[11] = ["Music Suggestor with Visualizer", "Suggests music based on 
 // PROJECT TOOLS
 var project_tools_static = ["<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr></table>"];
 var project_tools = [];
-project_tools[1] = "R, SQL, PHP, JavaScript, HTML5";
+project_tools[1] = "R, MySQL, PHP, JavaScript, HTML5";
 project_tools[2] = "R";
 project_tools[3] = "R, Bioconductor/EBImage, PHP";
 project_tools[4] = "R";
@@ -518,7 +518,7 @@ How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr
 <table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
 Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr></table>"];
 var project_description = [];
-project_description[1] = ["Users can select through any of the neurons in the connectome of the C. elegans hermaphrodite.  The program will then output information about each individual neuron in the appropriate fields as well as display on the HTML5 canvas all of its connections to other neurons in the network.", "The front-end of the application is primarily written in JavaScript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the JavaScript via Ajax to a separate back-end PHP script.  This script then performs mySQL queries to pull data for each neuron and outputs this data in text format for the front-end JavaScript to parse through.<p>&nbsp;Although SQL is used extensively, there is also considerable parsing of some of the SQL outputs by JavaScript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the mySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org'>Worm Atlas</a>."];
+project_description[1] = ["Users can select through any of the neurons in the connectome of the C. elegans hermaphrodite.  The program will then output information about each individual neuron in the appropriate fields as well as display on the HTML5 canvas all of its connections to other neurons in the network.", "The front-end of the application is primarily written in JavaScript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the JavaScript via Ajax to a separate back-end PHP script.  This script then performs MySQL queries to pull data for each neuron and outputs this data in text format for the front-end JavaScript to parse through.<p>&nbsp;Although MySQL is used extensively, there is also considerable parsing of some of the MySQL outputs by JavaScript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the MySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org'>Worm Atlas</a>."];
 project_description[2] = ["Upon activation, the script will generate the neural network.  It will also create a visual representation of the network.  Blue arrows indicate excitatory synapses whereas red arrows indicate inhibitory synapses.  The direction of the arrows also indicate the direction of axonal projection.  Circles represent the neuron cell bodies themselves, and they are individually labeled as one of three types of neurons:  (S) sensory, (I) interneruon, and (M) motor neuron.", "The project was written entirely in R.  The user will specify the number of neurons to be contained in the network (minimum of three neurons) and the network will scale to match.  Each neuron is represented as a list object containing different variable types, for example cell type and number of synapses.  The network is then visually represented by drawing with the plot function."];
 project_description[3] = ["Users simply select the file(s) to be analyzed.  The script will then calculate the approximate levels of activity.  Analyses are output on the left-hand panel and the image of interest is shown on the right-hand panel.", "The R script scans each image pixel-by-pixel looking for RGB values.  These values are stored in matrices which are then calculated against each other to determine specific values for each color.<br><br>Upon running the PHP webpage, the page makes a call to the system to run the script.  The script performs the analyses, and outputs the data in the form of JavaScript.  This JavaScript is executed on the webpage to populate the left and right data panels."];
 project_description[4] = ["Users will be able to specify the type of neuron model and network motif to be used.  The script will then run the program based on these parameters and display the progress of the network activity.", "The scripts are written in R.  Each neuron is represented by a class object, featuring synapses, activity level, and model function.  One or more types of these neuron models are then strung together based on the network architecture (feedforward or circular).  Individual neuron activity levels are drawn on plots, representing membrane voltage vs time."];
@@ -587,8 +587,8 @@ function get_project_content(value){
     project_url = "http://www.github.com/rrod/solar_system";
   }
   if (value === 8){
-    var img_1 = "https://dl.dropboxusercontent.com/s/cx37m8ph3wzky54/tmp_ffmpeg11.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
+    var img_1 = "https://dl.dropboxusercontent.com/s/jdhk2kbbjjoz9gc/tmp_ffmpeg22.png?dl=0";
+    var img_2 = "https://dl.dropboxusercontent.com/s/7ln8wo5ujkzqlvr/tmp_ffmpeg24.png?dl=0";
     var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
 
     project_url = "http://www.github.com/rrod/???";
@@ -678,29 +678,35 @@ function about_me(value){
       What this means is that I make software for the Internet.  Previously this work had mostly centered on scientific applications, but I have since broadened my talent into a generalist developer.<br><br>\
       Some examples of what I have done can be found in my <a href='3_work.html'>portfolio</a>.<br><br>\
       Although this software has been my primary focus for about a year now, I have also been writing scripts, websites, and other closely-related works for general use and fun for over three years.<br><br>\
-      R and Javascript are my go-to programming languages, but I often incorporate other languages and tools within my work.<br><br><br>\
+      R and JavaScript are my go-to programming languages, but I often incorporate other languages and tools within my work.<br><br><br>\
       <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Education</font><br>\
       I completed my Bachelor's degree in Biology at Saint Louis University, where I concentrated in cell biology and neuroscience. After finishing, I have continued to pursue my work and have been coding and modeling neuronal systems ever since.<br><br>\
       My programming skills are almost entirely self-taught where they were developed from a hobbyist level to a career tool.\
     </div>\
-    <div style='position:absolute; left: 72%; top: 5%; width: 25.5%; background-color:#FFFFFF; color:#000000; text-align:left;'>\
-      <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Programming</font><br>\
-      R<br>\
+    <div style='position:absolute; left: 72%; top: 5%; width: 25.5%; background-color:#FFFFFF; color:#000000; text-align:center;'>\
+      <!--<font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Programming</font><br>\
       JavaScript<br>\
+      R<br>\
       HTML / CSS<br>\
-      PHP<br>\
+      PHP / Node.js<br>\
       MySQL\
       <br><br>\
       <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Knowledge</font><br>\
-      Neurobiology<br>\
-      Mol. / Cell Biology<br>\
-      Endocrinology<br>\
-      Neuronal Modeling\
+      Web Applications<br>\
+      Web Development\
+      <br><br>-->\
+      <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>What I Can Do</font><br>\
+      Web Applications<br>\
+      Web Development\
       <br><br>\
-      <!--<font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Tools & Software</font><br>\
-      Office<br>\
-      RStudio<br>\
-      Linux / Windows-->\
+      <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>How I Can Do It</font><br>\
+      JavaScript<br>\
+      R<br>\
+      HTML / CSS<br>\
+      Bootstrap<br>\
+      PHP / Node.js<br>\
+      MySQL<br>\
+      Libraries / Frameworks<br>\
     </div>\
     </div>\
     <div style='position:absolute; left:0%; width: 100%; background-color:#FFFFFF; color:#000000; text-align:center;'>\
