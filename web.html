@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Website developer in Corpus Christi, Texas.">
+  <meta name="keywords" content="web design, web development, website, corpus christi, south texas, coastal bend, websites.cc, mobile">
+  <meta name="author" content="websites.cc">
+
+  <title>websites.cc - Website Developer of Corpus Christi, Texas</title>
+
+  <style>
+  body{
+    background-color: #000;
+    color: #fff;
+
+    overflow-x: hidden;
+
+    font-family: sans-serif;
+  }
+
+  a{
+    color: #888;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+  a:hover{
+    color: #0af;
+  }
+
+  .top_nav{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10%;
+
+    color: #000;
+    background-color: #fff;
+
+    z-index: 15;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .nav_menu_links{
+    /*position: absolute;*/
+    /*right: 0%;*/
+    /*width: 100%;*/
+
+    text-align: center;
+
+    border: 0px solid #000;
+  }
+
+  .nav_menu_links_spacer{
+    /*width: 50%;*/
+    border: 0px solid #f00;
+  }
+
+  .card{
+    position: absolute;
+
+    /*top: 0%;*/
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    color: #fff;
+  }
+
+  .card_1{
+    position: fixed;
+    top: 10%;
+    height: 90%;
+    background-color: #059;
+    background: linear-gradient(to right, #059, #095);
+  }
+
+  .services{
+    top: 0%;
+
+    background-color: #ddd;
+    color: #00f;
+  }
+
+  .examples{
+    top: 0%;
+
+    background-color: #fff;
+    color: #00f;
+  }
+
+  .card_4{
+    top: 0%;
+
+    background-color: #059;
+    /*background-image: url('loc_map.png');*/
+    /*-webkit-filter: grayscale(100%);
+    filter: grayscale(100%);*/
+    color: #fff;
+  }
+
+  #map{
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    width: 70%;
+    height: 85%;
+  }
+
+  .form_table{
+      position:absolute;
+
+      height:50%;
+      width: 100%;
+      border: 1px solid #fff;
+    }
+
+    .form_field{
+      background: #222;
+
+      /*position: absolute;*/
+      /*left: 2.5%;*/
+      /*width: 100%;*/
+      /*height: 12.5%;*/
+
+      font-size: 130%;
+
+      border: 1px solid #222;
+    }
+
+    .form_field:hover{
+      /*background: linear-gradient(to right,#222,#642);*/
+      background: linear-gradient(to right,rgba(0,0,0,0),#06a);
+    }
+
+    pre {
+      white-space: pre-wrap;       /* Since CSS 2.1 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+
+    .title_bar{
+      color: #222;
+      font-weight: bold;
+      font-size: 150%;
+
+      /*background: linear-gradient(#fff, #059);*/
+      border: 1px solid #000;
+      border-left-style: none;
+      border-right-style: none;
+      border-top-style: none;
+    }
+
+    .services_button{
+      position:absolute;
+      height: 30%;
+      width: 29%;
+      /*background-color: #222;*/
+      /*border: 1px solid black;*/
+      /*z-index: 5;*/
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .services_button_1{
+      top: 17%;
+      left: 5%;
+    }
+
+    .services_button_2{
+      top: 50%;
+      left: 5%;
+    }
+
+    .services_button_3{
+      top: 17%;
+      left: 35.5%;
+    }
+
+    .services_button_4{
+      top: 50%;
+      left: 35.5%;
+    }
+
+    .services_button_5{
+      top: 17%;
+      left: 66%;
+    }
+
+    .services_button_6{
+      top: 50%;
+      left: 66%;
+    }
+
+    .services_button_img{
+      positon:absolute;
+      height:90%;
+      background-color: #999;
+      /*background: url('se01.jpg');*/
+      background-size: 100% 100%;
+    }
+
+    .services_button_desc{
+      position: absolute;
+      bottom: 0%;
+      background-color: #222;
+      width: 100%;
+      text-align: center;
+      font-size: 120%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="top_nav" class="top_nav">
+    <div id="logo" style="position: absolute; top:40%; left: 10%; width:30%; z-index: 16;">
+      WEBSITES.CC
+    </div>
+    <div id="nav_menu" style="position: absolute; top:40%; right: 10%; z-index: 17; background-color:#fff;">
+      <table>
+        <tr>
+          <td class="nav_menu_links">
+            <a href="#card_1" onclick="get_card(0)">HOME</a>
+          </td>
+          <td class="nav_menu_links_spacer">
+            &nbsp;
+          </td>
+          <td class="nav_menu_links">
+            <a href="#card_2" onclick="get_card(1)">SERVICES</a>
+          </td>
+          <td class="nav_menu_links_spacer">
+            &nbsp;
+          </td>
+          <td class="nav_menu_links">
+            <a href="#card_3" onclick="get_card(2)">EXAMPLES</a>
+          </td>
+          <td class="nav_menu_links_spacer">
+            &nbsp;
+          </td>
+          <td class="nav_menu_links">
+            <a href="#card_4" onclick="get_card(3)">CONTACT</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <div id="view" style="position: absolute; top: 10%; left: 0%; height: 90%; width: 100%; background: #000; color: #fff; z-index:4;">
+  </div>
+
+  <script>
+  var card_html = [];
+  card_html[0] = `
+    <div id="card_1" class="card card_1">
+      <div id="home_title" style="position: absolute; top: 20%; left: 0%; height: 80%; width: 100%; font-size: 300%; text-align: center;">
+        WEBSITES.CC
+      </div>
+
+      <div id="home_description" style="position: absolute; top: 35%; left: 0%; width: 100%; font-size: 150%; text-align: center;">
+        websites &middot; web apps &middot; desktop
+      </div>
+    </div>
+  `;
+
+  card_html[1] = `
+    <div id="card_2" class="card services" style="">
+      <div class="title_bar">
+        <br>
+        <center>
+          <a href="#card_2" onclick="card(2)" style="color:#444" onmouseover="this.style.color='#0af';" onmouseout="this.style.color='#444';">SERVICES</a>
+        </center>
+        <br>
+      </div>
+      <div class="services_button services_button_1" style="" onclick="#" onmouseover="this.style.color='#0af'" onmouseout="this.style.color='#fff'">
+        <div class="services_button_img" style="background: url('se02.jpg'); background-size: 100% 100%;">
+        </div>
+        <div class="services_button_desc" style="">
+          Web Design
+        </div>
+      </div>
+
+      <div class="services_button services_button_2" style="" onclick="#" onmouseover="this.style.color='#0af'" onmouseout="this.style.color='#fff'">
+        <div class="services_button_img" style="background: url('se12.jpg'); background-size: 100% 100%;">
+        </div>
+        <div class="services_button_desc" style="">
+          Web Apps
+        </div>
+      </div>
+
+      <div class="services_button services_button_3" style="" onclick="#" onmouseover="this.style.color='#0af'" onmouseout="this.style.color='#fff'">
+        <div class="services_button_img" style="background: url('se04.jpg'); background-size: 100% 100%;">
+        </div>
+        <div class="services_button_desc" style="">
+          Social
+        </div>
+      </div>
+
+      <div class="services_button services_button_4" style="" onclick="#" onmouseover="this.style.color='#0af'" onmouseout="this.style.color='#fff'">
+        <div class="services_button_img" style="background: url('se08.jpg'); background-size: 100% 100%;">
+        </div>
+        <div class="services_button_desc" style="">
+          CMS
+        </div>
+      </div>
+
+      <div class="services_button services_button_5" style="" onclick="#" onmouseover="this.style.color='#0af'" onmouseout="this.style.color='#fff'">
+        <div class="services_button_img" style="background: url('se06.jpg'); background-size: 100% 100%;">
+        </div>
+        <div class="services_button_desc" style="">
+          RWD
+        </div>
+      </div>
+
+      <div class="services_button services_button_6" style="" onclick="#" onmouseover="this.style.color='#0af'" onmouseout="this.style.color='#fff'">
+        <div class="services_button_img" style="background: url('se07.jpg'); background-size: 100% 100%;">
+        </div>
+        <div class="services_button_desc" style="">
+          More...
+        </div>
+      </div>
+    </div>
+  `;
+
+  card_html[2] = `
+    <div id="card_3" class="card examples">
+      <div class="title_bar">
+        <br>
+        <center>
+          <a href="#card_3" onclick="card(3)" style="color:#444;" onmouseover="this.style.color='#0af';" onmouseout="this.style.color='#444';">EXAMPLES</a>
+        </center>
+        <br>
+      </div>
+      <div id="examples_prev" style="position:absolute; top:12%; left:0%; width:100%; height:88%; background-color:#a0a;">
+        <div id="examples_0" style="position:absolute; top:0%; left:0%; width:100%; height:100%; background-color:#f00; background: url('ex_site_04.jpg') no-repeat; background-size: 100% 100%;">
+        </div>
+        <div id="examples_1" style="position:absolute; top:0%; left:0%; width:0%; height:100%; background-color:#0f0; background: url('ex_site_06.jpg'); background-size: 100% 100%;">
+        </div>
+        <div id="examples_2" style="position:absolute; top:0%; left:0%; width:0%; height:100%; background-color:#00f; background: url('ex_site_05.jpg'); background-size: 100% 100%;">
+        </div>
+      </div>
+
+      <div id="example_button_0" style="position: absolute; bottom: 5%; left: 40%; height: 5%; width: 2.5%; background: #ff0; border: 3px solid #06a;border-radius: 25px;" onclick="get_example(0)" onmouseover="this.style.cursor='pointer'">
+      </div>
+
+      <div id="example_button_1" style="position: absolute; bottom: 5%; left: 50%; height: 5%; width: 2.5%; background: #06a; border: 3px solid #06a;border-radius: 25px;" onclick="get_example(1)" onmouseover="this.style.cursor='pointer'">
+      </div>
+
+      <div id="example_button_2" style="position: absolute; bottom: 5%; left: 60%; height: 5%; width: 2.5%; background: #06a; border: 3px solid #06a;border-radius: 25px;" onclick="get_example(2)" onmouseover="this.style.cursor='pointer'">
+      </div>
+    </div>
+  `;
+
+  card_html[3] = `
+    <div id="card_4" class="card card_4">
+      <div class="title_bar" style="color: #eee;">
+        <br>
+        <center>
+          <a href="#card_4" onclick="card(4)" style="color:#fff" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';">CONTACT</a>
+        </center>
+        <br>
+      </div>
+
+      <div id="card_4_contact_form" style="position:absolute; left:20%; width:60%; top:15%;">
+
+      <table style="border: 0px solid #f00; width: 100%;">
+<tr>
+<td>
+      <table style="border: 0px solid #ff0; width: 101%;">
+        <tr>
+          <td style="border:1px solid #eee; width:30%; padding: 5px; text-align: center; word-break: break-all; ">
+            <div id="contact_phone" style="width:100%;">
+              (361) 123 4567
+            </div>
+          </td>
+
+          <td style="border:1px solid #eee; width:40%; padding: 5px; text-align: center; word-break: break-all; ">
+            <div id="contact_address" style="width:100%;">
+              Address, Corpus Christi, Texas
+            </div>
+          </td>
+
+          <td style="border:1px solid #eee; width:30%; padding: 5px; text-align: center; word-break: break-all; ">
+            <div id="contact_email" style="width:100%;">
+              contact@websites.cc
+            </div>
+          </td>
+        </tr>
+      </table>
+</td>
+</tr>
+
+<tr>
+<td>
+      <table style="border: 0px solid #ff0; width: 100%;">
+        <tr>
+          <td style="border:0px solid #f00; width:45%; ">
+            <div id="form_name"><br>
+              NAME: *
+              <br><br><input type="text" class="form_field" value="NAME" style="border:1px solid #eee; background-color: rgba(0,0,0,0); width: 90%; color: #fff; padding: 5px; "></input>
+            </div>
+          </td>
+
+          <td style="border:0px solid #f00; width:45%; ">
+            <div id="form_email"><br>
+              EMAIL: *
+              <br><br><input type="text" class="form_field" value="EMAIL" style="border:1px solid #eee; background-color: rgba(0,0,0,0); width: 100%; color: #fff; padding: 5px; "></input>
+            </div>
+          </td>
+        </tr>
+      </table>
+</td>
+</tr>
+
+<tr>
+<td>
+      <table style="border: 0px solid #ff0; width: 100%;">
+        <tr>
+          <td style="border:0px solid #f00; width:100%; ">
+            <div id="form_comment">
+            <br>
+              COMMENT: *
+              <br><br><textarea class="form_field" rows=5 style="border:1px solid #eee; background-color: rgba(0,0,0,0); width: 100%; color: #fff; padding: 5px; ">Comment...</textarea>
+            </div>
+          </td>
+        </tr>
+      </table>
+</tr>
+</td>
+
+<tr>
+<td>
+      <table style="border: 0px solid #ff0; width: 100%;">
+        <tr>
+          <td style="border:0px solid #eee; width:45%; text-align: center; ">
+            <div id="form_reset" onmouseover="this.style.cursor = 'pointer'" onclick="" style="border:1px solid #eee; width:90%; padding: 5px; text-align: center; ">
+              RESET
+            </div>
+          </td>
+
+          <td style="border:0px solid #eee; width:45%; text-align: center; ">
+            <div id="form_submit" onmouseover="this.style.cursor = 'pointer'" onclick="" style="border:1px solid #eee; width:100%; padding: 5px; text-align: center; ">
+              SUBMIT
+            </div>
+          </td>
+        </tr>
+      </table>
+</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+  `;
+
+  // load initial card
+  document.getElementById("view").innerHTML = card_html[0];
+  // get_card(2);
+
+  function get_card(value){
+    document.getElementById("view").innerHTML = card_html[value];
+    rotate_examples(value);
+  }
+
+  // if (value === 2){
+    function examples_switch(value){
+      var cols = ["#fff", "#222"];
+      var num_examples = 3;
+      switch(value){
+        case 0:
+          for (var i = 1; i <= num_examples; i++){
+            if (document.getElementById("examples_" + i).style.width === "100%"){
+              document.getElementById("examples_" + i).style.width = 0;
+              document.getElementById("example_button_" + i).style.background = cols[1];
+              if (i === 1){
+                document.getElementById("examples_" + num_examples).style.width = "100%";
+                document.getElementById("example_button_" + num_examples).style.background = cols[1];
+              }else{
+                document.getElementById("examples_" + (i - 1)).style.width = "100%";
+                document.getElementById("example_button_" + (i - 1)).style.background = cols[1];
+              }
+              break;
+            }
+          }
+        case 1:
+          for (var i = 1; i <= num_examples; i++){
+            if (document.getElementById("examples_" + i).style.width === "100%"){
+              document.getElementById("examples_" + i).style.width = 0;
+              document.getElementById("example_button_" + i).style.background = cols[0];
+              if (i === num_examples){
+                document.getElementById("examples_" + 1).style.width = "100%";
+                document.getElementById("example_button_" + i).style.background = cols[0];
+              }else{
+                document.getElementById("examples_" + (i + 1)).style.width = "100%";
+                document.getElementById("example_button_" + (i + 1)).style.background = cols[1];
+              }
+              break;
+            }
+          }
+      }
+    }
+
+    function get_example(value){
+      var cols = ["#06a", "#ff0"];
+      var num_examples = 2;
+
+      for (var i = 0; i <= num_examples; i++){
+        // close off all examples
+        if (document.getElementById("examples_" + i).style.width === "100%"){
+          document.getElementById("examples_" + i).style.width = "0%";
+          document.getElementById("example_button_" + i).style.background = cols[0];
+        }
+      }
+
+      // open selected example
+      document.getElementById("examples_" + value).style.width = "100%";
+      document.getElementById("example_button_" + value).style.background = cols[1];
+    }
+
+    function rotate_examples(value){
+      if (value === 2){
+        var val = 0;
+        (function(){
+          setInterval(function(){
+            val++;
+            if (val >= 3){
+              val = 0;
+            }
+
+            get_example(val);
+
+          }, 2500);
+        })();
+      }else{
+        // do nothing
+      }
+    }
+
+    (function(){
+      if (window.location.href.indexOf("#card_3") > -1){
+        rotate_examples(2);
+      }
+    })();
+
+
+  // }
+  </script>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+</body>
+</html>
+
+<noscript>
+  <div style="position: absolute; top: 0; left: 0; background: #000; z-index: 20;">
+    This site works best with JavaScript enabled.
+  </div>
+</noscript>
