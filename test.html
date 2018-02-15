@@ -124,6 +124,11 @@ PERSONAL COMMENT
       border-bottom-style: none;
     }
     /*////////////////////////////////////////////////////////////////////////*/
+    
+    img{
+      width: 100%;
+      height: 100%;
+    }
   </style>
   
   <!-- NO SCRIPT WARNING ////////////////////////////////////////////////////-->
@@ -521,9 +526,27 @@ var content = [
 })();
 
 window.onload = function(){
-  for (var i = 0; i < 9; i++){
-    document.getElementById("example_" + i + "_image").style.backgroundImage = content[i].images[1];
-  }
+  // for (var i = 0; i < 9; i++){
+  //   document.getElementById("example_" + i + "_image").style.backgroundImage = content[i].images[1];
+  // }
+  document.getElementById("example_0_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/vgy7axqxviephvq/network_01.png?dl=0' />";
+  document.getElementById("example_1_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/ri831jqvcnkny36/calendar_new_01.png?dl=0' />";
+  document.getElementById("example_2_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/m7l4bqy3vewjfea/ffmpeg.png?dl=0' />";
+  document.getElementById("example_3_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/iu9miw04sic29fb/game1.png?dl=0' />";
+  document.getElementById("example_4_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/bmb3dxb4mbfhpsb/nematode.png?dl=0' />";
+  document.getElementById("example_5_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/0pr31evfcmq6dhn/music.png?dl=0' />";
+  document.getElementById("example_6_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/y4cwo1ix0o2rmw9/game2.png?dl=0' />";
+  document.getElementById("example_7_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/9exd1co6ze6k11z/solar.png?dl=0' />";
+  document.getElementById("example_8_image").innerHTML =
+    "<img src='https://dl.dropboxusercontent.com/s/9mzu932mflmun3z/fmri.jpg?dl=0' />";
 }
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
