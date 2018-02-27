@@ -1,1066 +1,919 @@
-<html>
-  <head>
-    <title>
-      Rodolfo Rodriguez :: Portfolio
-    </title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rudy Rodriguez :: Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Austin, Texas based software developer.  Websites, web applications, mobile, and desktop software.  Experienced in JavaScript, HTML5, NodeJS, and more." />
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/x-icon" href="https://dl.dropboxusercontent.com/s/g50u9xjzwh071i3/icon_02.png?dl=0" />
+  
+  <style>
+    /*////////////////////////////////////////////////////////////////////////*/
+    /* GENERAL STYLING */
+    *{
+      box-sizing: border-box;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    
+    a:link {color:#08f; text-decoration:none;}
+    a:visited {color:#08f; text-decoration:none;}
+    a:hover{color:#8af; text-decoration:underline;}
+    a:active {color:#f00; text-decoration:none;}
+    
+    #noscript{
+      position:fixed;
+      left:0;
+      width:100%;
+      z-index:200;
+      color:#f00;
+      font-size:24px;
+      font-weight:bold;
+      text-align:center;
+    }
+    
+    .github_banner{
+      position: absolute;
+      top: 11%;
+      width: 98%;
+      left: 1%;
+      background-color: #ccf;
+      color: #000;
+    }
+    /*////////////////////////////////////////////////////////////////////////*/
 
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
-    <noscript>
-      <!-- <center> -->
-        <span style='position:absolute; left:0; width:100%; z-index:200; color:#f00; font-size:20; font-weight:bold; text-align:center;'>
-          (This site requires JavaScript to function properly.)
-        </span>
-      <!-- </center> -->
-    </noscript>
-  </head>
+    /*////////////////////////////////////////////////////////////////////////*/
+    /* STYLING FOR PROJECTS GRID */
+    .container{
+      position: absolute;
+      left: 1%;
+      top: 15%;
+      width: 98%;
+      
+      padding: 0;
+      column-count: 3;
+      column-width: 450px;
+    }
 
-  <body bgcolor="#FFFFFF" style="background-image: url(''); font-family: 'Droid Sans', sans-serif;">
-  <div id="project_large_bg" style="position:absolute; left:0%; top:0%; height:0%; width:0%;" onclick="display_project_large_bg(0)"></div>
-  <div id="project_large" style="position:absolute; left:0%; top:0%; height:0%; width:0%; border:0px solid #8888FF;" onclick=""></div>
+    .example{
+      color: #000;
+      height: 50%;
+      height: 400px;
+    }
+    
+    .example_image{
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      
+      height: 253px;
+      height: 60%;
+      
+      background-color: #000;
+    }
+    .example_img_2{
+      width: 100%;
+      height: 100%;
+      
+      background: rgba(125,125,125,0);
+      color: rgba(125,125,125,0);
+      z-index: 500;
+      border: 0 solid #000;
+      font-size: 200%;
+    }
+    .example_img_2:hover{
+      background: rgba(125,125,125,0.6);
+      color: #fff;
+      z-index: 500;
+    }
+    
+    .example_text{
+      background-color: #fff;
+    }
+    
+    .example_viewcode{
+      float: right;
+    }
+    
+    .example_tools{
+      color: #444;
+    }
+    /*////////////////////////////////////////////////////////////////////////*/
+    
+    
+    /*////////////////////////////////////////////////////////////////////////*/
+    /* STYLING FOR THE TOP BANNER */
+    .container_top{
+      position: fixed;
+      left: 1%;
+      top: 0;
+      
+      background-color: #fff;
+      z-index: 10;
+      
+      width: 98%;
+      height: 10%;
+      
+      border: 1px solid black;
+      border-left-style: none;
+      border-right-style: none;
+      border-top-style: none;
+    }
+    
+    .top_name{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    
+    .top_navigation{
+      position: absolute;
+      right: 1%;
+      bottom: -1px;
+      
+      width: 10%;
+      height: 50%;
+      
+      background-color: #fff;
+      
+      color: #000;
+      
+      border: 1px solid #000;
+      border-bottom-style: none;
+      
+      font-size: 1vh;
+      font-size: 1vw;
+      font-weight: lighter;
+    }
+    /*////////////////////////////////////////////////////////////////////////*/
 
-  <div id="contain" class="contain">
-    <!-- TOP NAV -->
-    <div id="top_nav" class="top_nav" style="position:fixed; top:0; left:2.5%; height:10%; width:95%;">
-      <table class="top_nav_name_2" height=80% border=0 cellspacing=0 cellpadding=0 style='position:absolute; top:0%; height:100%;'>
-              <tr width=100% valign=bottom>
-                <td>
-                  <table class="top_nav_name_2" width=100% height=80% cellspacing=0 cellpadding=0>
-                    <tr onclick="">
-                      <td align=left style="color:#00DDDD; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; font-size: 30px; font-family: 'FreeSans';">
-                        RODOLFO <br><font color="#000000" style="font-size: 24.5px;">RODRIGUEZ</font>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
+
+    /*////////////////////////////////////////////////////////////////////////*/
+    /* SEE HERE DETAILED WINDOW */
+    #see_more_window{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(50,50,50,1);
+      z-index: 1000;
+      overflow: hidden;
+      visibility: hidden;
+    }
+    
+    .window_img{
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      
+      position: absolute;
+      left: 1%;
+      top: 1%;
+      width: 98%;
+      height: 70%;
+      background-color: #000;
+      z-index: 1002;
+    }
+    
+    #see_more_window_img_dot{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+      position: absolute;
+      left: 0;
+      top: 95%;
+      width: 100%;
+      height: 5%;
+      background-color: rgba(255,0,0,0);
+      z-index: 1003;
+      border: 0;
+    }
+    
+    #see_more_window_img_dot_0, #see_more_window_img_dot_1, #see_more_window_img_dot_2{
+      z-index: 1104;
+      width: 1.5%;
+      height: 50%;
+      margin: 1%;
+      
+      background-image: url("./test_img/circle_0.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    
+    #close{
+      position: fixed;
+      bottom: 1%;
+      right: 1%;
+      color:#fff;
+    }
+    
+    #close:hover{
+      color: #0af;
+      text-decoration: underline;
+    }
+    
+    #see_more_window_img_left, #see_more_window_img_right{
+      position: absolute;
+      top: 49%;
+      background-color: rgba(255,200,0,0.5);
+      z-index: 1004;
+      color: #000;
+      font-size: 3vh;
+      border-radius: 50px;
+      border: 0;
+    }
+    
+    #see_more_window_description{
+      position: absolute;
+      left: 1%;
+      top: 70%;
+      width: 98%;
+      height: 25%;
+      background-color: #fff;
+      z-index: 1003;
+      border: 1px solid #000;
+      border-left-style: none;
+      border-bottom-style: none;
+      border-right-style: none;
+    }
+    /*////////////////////////////////////////////////////////////////////////*/
+  </style>
+  
+  <!-- NO SCRIPT WARNING ////////////////////////////////////////////////////-->
+  <noscript>
+    <span id="noscript">
+      (This site requires JavaScript to function properly.)
+    </span>
+  </noscript>
+  <!-- //////////////////////////////////////////////////////////////////////-->
+</head>
+
+<body>
+  
+  <!-- TOP NAV //////////////////////////////////////////////////////////////-->
+  <div id="container_top" class="container_top">
+    <div id="top_name" class="top_name">
+      <strong>
+        <font style="font-size: 24.5px; color: #000;">
+          RUDY RODRIGUEZ
+        </font>
+      </strong>
     </div>
-    <div id="top_nav_button_2_1" class="top_nav_button" style="position:fixed; height:5%; top:5%; width:10%; right:13.5%; border: 1px solid #000000; border-bottom-style:none;">
-      <table id="top_nav_button_2_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
-              <tr width=100% valign=bottom>
-                <td>
-                  <table id="top_nav_button_2_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
-                    <tr onclick="parent.location.href='4_work.html'">
-                      <td align=center>
-                        PORTFOLIO
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-    </div>
-    <div id="top_nav_button_4_1" class="top_nav_button" style="position:fixed; height:5%; top:5%; width:10%; right:2.5%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none;">
-      <table id="top_nav_button_4_2" width=100% height=100% border=0 cellspacing=0 cellpadding=0 style="background-color: #FFFFFF;">
-              <tr width=100% valign=bottom>
-                <td>
-                  <table id="top_nav_button_4_3" class="top_nav_button_link" width=100% height=100% cellspacing=0 cellpadding=0 style="color:#000000;">
-                    <tr onclick="about_me(1);">
-                      <td align=center>
-                        ABOUT
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-    </div>
-    <!-- TOP NAV -->
-
-
-    <div id="bottom_nav" class="content" style="z-index: 0;">
-    <div style="position:absolute; left: 2.5%; top: -5%; width: 95%; background-color:#CCCCFF; color:#000000; text-align:left; z-index:5;">
-      View my entire GitHub <a href="http://www.github.com/rrod" target='_blank'>here</a>.
-    </div>
-
-    <!-- ALL PROJECTS -->
-    <!-- TITLE ABOVE PROJECTS GRID
-    <div style="position:relative; left: 2.5%; width: 95%; background-color:#FFFFFF; color:#00AAAA; font-size: 125%; font-weight: bold; text-align:left; z-index:5;">
-      All Projects
-    </div>
-    -->
-
-    <table border=0 cellspacing=3 cellpadding=0 style='position:relative; left:2.5%; width:95%;'>
-      <tr>
-        <!-- CALENDAR UI /////////////////////////////////////////////////// -->
-        <td>
-          <div id="example_6" class="example">
-            <div id="example_6_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/98jgcain0c64g79/calendar_new_01.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(6)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_6_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Calendar UI</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/neuron_predict/main.html" target="_blank">Try Me</a>)<br>
-            <font color=#666666>JavaScript, jQuery, CSS</font><p>
-            Adds a new front-end user interface for the FullCalendar jQuery library.  The new UI allows faster access to information and is more intuitive than the original UI.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/neuron_predict" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- NEMATODE CONNECTOME//////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_1" class="example">
-            <div id="example_1_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/g51kxcm4b6h2gul/nematode_2016_1.png');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(1)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_1_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Nematode Connectome</font><br>
-            <font color=#666666>R, MySQL, PHP, JavaScript</font><p>
-            Interactive web-based model of the neural network of the worm <i>C. elegans</i>.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,0);"><a href="http://github.com/rrod/nematode_connectome" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-
-        <!-- GUI FOR FFMPEG //////////////////////////////////////////////// -->
-        <td>
-          <div id="example_8" class="example">
-            <div id="example_8_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/jdhk2kbbjjoz9gc/tmp_ffmpeg22.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(8)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_8_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">GUI for FFmpeg</font><br>
-            <font color=#666666>JavaScript, Node.js, FFmpeg</font><p>
-            A graphical user interface (GUI) for the command line-based FFmpeg multimedia editor.
-            </div>
-
-            <div id="example_8_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/ffmpeg_gui" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-
-
-        <!-- MUSIC SUGGESTOR /////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_11" class="example">
-            <div id="example_11_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/s6n7oejcmz8tz2p/tmp_music2.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(11)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_11_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Music Suggestor</font><br>
-            <font color=#666666>JavaScript, Web Audio API, Angular.js</font><p>
-            Suggests music based on song analyses using the Web Audio API.  Includes a music visualizer.
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- NETWORK FILE MANAGER ////////////////////////////////////////// -->
-        <td>
-          <div id="example_2" class="example">
-            <div id="example_2_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/r7j53j6auzqp9ip/network_01.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(2)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_2_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Network File Manager</font><br>
-            <font color=#666666>NodeJS, Socket.IO</font><p>
-            Makes it easier for users to share files and utilize storage space across their network.
-            </div>
-
-            <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/procedural_NN" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-      </tr>
-
-      <tr>
-        <!-- NEMATODE CONNECTOME//////////////////////////////////////////// -->
-        <td>
-          <div id="example_1" class="example">
-            <div id="example_1_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/g51kxcm4b6h2gul/nematode_2016_1.png');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(1)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_1_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Nematode Connectome</font><br>
-            <font color=#666666>R, MySQL, PHP, JavaScript</font><p>
-            Interactive web-based model of the neural network of the worm <i>C. elegans</i>.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,0);"><a href="http://github.com/rrod/nematode_connectome" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- CALENDAR UI /////////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_6" class="example">
-            <div id="example_6_image" class="example_img" style="background-image: url('calendar_new_01.png');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(6)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_6_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Calendar UI</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/neuron_predict/main.html" target="_blank">Try Me</a>)<br>
-            <font color=#666666>JavaScript, jQuery, CSS</font><p>
-            Adds a new front-end user interface for the FullCalendar jQuery library.  The new UI allows faster access to information and is more intuitive than the original UI.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/neuron_predict" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- 3D SOLAR SYSTEM /////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_7" class="example">
-            <div id="example_7_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/h82otobdd196shp/1ss.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(7)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_7_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">3D Solar System</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/solar_system/main.html" target="_blank">Try Me</a>)<br>
-            <font color=#666666>three.js</font><p>
-            Interactive 3D web application of the Solar System using three.js / WebGL.
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/solar_system" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-
-
-        <!-- ANTHROPOCENE ////////////////////////////////////////////////// -->
-        <td>
-          <div id="example_9" class="example">
-            <div id="example_9_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/94ysk1o4jgg0csn/civ2.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(9)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_9_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Anthropocene</font><br>
-            <font color=#666666>JavaScript</font><p>
-            Civilization-like game written in JavaScript.  Single player only.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/Anthropocene_game" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-
-
-        <!-- NETWORK FILE MANAGER ////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_2" class="example">
-            <div id="example_2_image" class="example_img" style="background-image: url('network_01.png');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(2)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_2_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Network File Manager</font><br>
-            <font color=#666666>NodeJS, Socket.IO</font><p>
-            Makes it easier for users to share files and utilize storage space across their network.
-            </div>
-
-            <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/procedural_NN" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- MUSIC SUGGESTOR /////////////////////////////////////////////// -->
-        <td>
-          <div id="example_11" class="example">
-            <div id="example_11_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/s6n7oejcmz8tz2p/tmp_music2.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(11)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_11_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Music Suggestor</font><br>
-            <font color=#666666>JavaScript, Web Audio API, Angular.js</font><p>
-            Suggests music based on song analyses using the Web Audio API.  Includes a music visualizer.
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- BREAKOUT VERSUS /////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_10" class="example">
-            <div id="example_10_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/9kl991knzo6hxyj/breakoutversus2.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(10)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_10_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Breakout Versus</font><br>
-            <font color=#666666>JavaScript, Node.js</font><p>
-            An HTML5 game with the concept of "Pong meets Breakout."  The game can be played either single player or multiplayer (via Node.js).
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/breakout_versus" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-      </tr>
-
-      <tr>
-        <!-- FMRI ////////////////////////////////////////////////////////// -->
-        <td>
-          <div id="example_3" class="example">
-            <div id="example_3_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/zuu31bgiy9yuhee/fmri_01.jpg?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(3)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_3_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">fMRI Image Analysis</font><br>
-            <font color=#666666>R, Bioconductor/EBImage, <!--Javacript, -->PHP<!--, HTML--></font><p>
-            Web application using PHP / R backend.  Analyzes images for relevant data.
-            </div>
-
-            <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/fmri" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-
-
-        <!-- 3D SOLAR SYSTEM /////////////////////////////////////////////// -->
-        <td>
-          <div id="example_7" class="example">
-            <div id="example_7_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/h82otobdd196shp/1ss.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(7)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_7_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">3D Solar System</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/solar_system/main.html" target="_blank">Try Me</a>)<br>
-            <font color=#666666>three.js</font><p>
-            Interactive 3D web application of the Solar System using three.js / WebGL.
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/solar_system" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- CALENDAR UI /////////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_6" class="example">
-            <div id="example_6_image" class="example_img" style="background-image: url('calendar_new_01.png');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(6)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_6_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Calendar UI</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/neuron_predict/main.html" target="_blank">Try Me</a>)<br>
-            <font color=#666666>JavaScript, jQuery, CSS</font><p>
-            Adds a new front-end user interface for the FullCalendar jQuery library.  The new UI allows faster access to information and is more intuitive than the original UI.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/neuron_predict" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- NEURON PREDICT //////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_6" class="example">
-            <div id="example_6_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/acezat43vaulewl/neuron_predict_01.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(6)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_6_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Neural Metrics</font>&nbsp;&nbsp;(<a href="http://rrod.github.io/neuron_predict/main.html" target="_blank">Try Me</a>)<br>
-            <font color=#666666>d3.js</font><p>
-            An evolution of the "Neuron Models" project, but re-created as a web application with added visuals.  It calculates various metrics of both the network and neurons in the network.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/neuron_predict" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-
-
-        <!-- BREAKOUT VERSUS /////////////////////////////////////////////// -->
-        <td>
-          <div id="example_10" class="example">
-            <div id="example_10_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/9kl991knzo6hxyj/breakoutversus2.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(10)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_10_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Breakout Versus</font><br>
-            <font color=#666666>JavaScript, Node.js</font><p>
-            An HTML5 game with the concept of "Pong meets Breakout."  The game can be played either single player or multiplayer (via Node.js).
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);"><a href="http://github.com/rrod/breakout_versus" target="_blank">View Code</a></div>
-          </div>
-        </td>
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- NETWORK FILE MANAGER ////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_2" class="example">
-            <div id="example_2_image" class="example_img" style="background-image: url('network_01.png');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(2)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_2_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Network File Manager</font><br>
-            <font color=#666666>NodeJS, Socket.IO</font><p>
-            Makes it easier for users to share files and utilize storage space across their network.
-            </div>
-
-            <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/procedural_NN" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        
-        <!-- PROCEDURAL NEURAL NETWORK////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_2" class="example">
-            <div id="example_2_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/fmkkomhoe41hr1p/procedural_NN_01.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(2)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_2_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Procedural Neural Net</font><br>
-            <font color=#666666>R</font><p>
-            Scalable, procedurally-generated neural network built from randomly-generated neurons.
-            </div>
-
-            <div id="example_1_src" class="example_src" style=""><a href="http://github.com/rrod/procedural_NN" target="_blank">View Code</a></div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-
-        <!-- <td>
-          <div id="example_11" class="example">
-            <div id="example_11_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/m49zdvzctrac4vz/visualizer_1.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(11)">
-                            <td align=center>
-                             LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_11_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Music Suggestor with Visualizer</font><br>
-            <font color=#666666>JavaScript, Web Audio API, MySQL</font><p>
-            Suggests music based on song analyses using the Web Audio API.  Includes a music visualizer.
-            </div>
-
-            <div id="example_7_src" class="example_src" style="color: rgba(0,0,0,1);">View Code</div>
-          </div>
-        </td> -->
-      </tr>
-
-      <tr>
-
-        <!-- // NEURON MODELS ////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_4" class="example">
-            <div id="example_4_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/shucn5hjwabvr6i/neuron_models_4.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(4)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_4_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Neuron Models</font><br>
-            <font color=#666666>R</font><p>
-            Neural networks which use different neuron models.  Both the neuron models and the network architecture can be pre-defined by the user.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);">View Code (<a href="http://github.com/rrod/LIF" target="_blank">1</a>, <a href="http://github.com/rrod/tiny_NN" target='_blank'>2</a>)</div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        
-        <!-- // NEURON MODELS ////////////////////////////////////////////// -->
-        <!-- <td>
-          <div id="example_4" class="example">
-            <div id="example_4_image" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/shucn5hjwabvr6i/neuron_models_4.png?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_2" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="display_project_large(4)">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-
-            <div id="example_4_info" class="example_info">
-            <font style="color:#000000; font-weight:bold;">Neuron Models</font><br>
-            <font color=#666666>R</font><p>
-            Neural networks which use different neuron models.  Both the neuron models and the network architecture can be pre-defined by the user.
-            </div>
-
-            <div id="example_1_src" class="example_src" style="color: rgba(0,0,0,1);">View Code (<a href="http://github.com/rrod/LIF" target="_blank">1</a>, <a href="http://github.com/rrod/tiny_NN" target='_blank'>2</a>)</div>
-          </div>
-        </td> -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        </tr>
-
-        <!--
-      <tr>
-        <td>
-          <div id="" class="example">
-            <div id="" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_200" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-        </td>
-
-        <td>
-          <div id="" class="example">
-            <div id="" class="example_img" style="background-image: url('https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0');">
-              <table width=100% height=100% border=0 cellspacing=0 cellpadding=0>
-                    <tr width=100% valign=bottom><td>
-                        <table class="example_img_200" style="color: rgba(0,0,0,0);" width=100% height=100% cellspacing=0 cellpadding=0>
-                          <tr onclick="">
-                            <td align=center>
-                              LEARN MORE
-                            </td>
-                          </tr></table>
-                      </td></tr>
-                  </table>
-            </div>
-        </td>
-      </tr>
-      -->
-    </table>
-    <!-- ALL PROJECTS -->
-
-    </div>
+    
+    <button id="top_navigation" class="top_navigation" disabled>
+      PORTFOLIO
+    </button>
   </div>
-  </body>
+  <!-- //////////////////////////////////////////////////////////////////////-->
+  
+  
+  <!-- "view my github" banner //////////////////////////////////////////////-->
+  <div class="github_banner">
+    View my entire GitHub <a href="https://www.github.com/rrod" target='_blank'>here</a>.
+  </div>
+  <!-- //////////////////////////////////////////////////////////////////////-->
+  
+  
+  <!-- PORTFOLIO EXAMPLES ///////////////////////////////////////////////////-->
+  <div id="container" class="container">
+    
+    <!-- EXAMPLE 1 //////////////////////////////////////////////////////////-->
+    <div id="example_0" class="example">
+      <div id="example_0_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(0)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_0_text" class="example_text">
+        <div id="example_0_text_top">
+          <span>
+            <strong id="example_0_title" class="example_title"></strong>
+          </span>
+          <span id="example_0_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_0_viewcode" class="example_viewcode"></div>
+        <div id="example_0_tools" class="example_tools"></div>
+        <div id="example_0_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 2 //////////////////////////////////////////////////////////-->
+    <div id="example_1" class="example">
+      <div id="example_1_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(1)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_1_text" class="example_text">
+        <div id="example_1_text_top">
+          <span>
+            <strong id="example_1_title" class="example_title"></strong>
+          </span>
+          <span id="example_1_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_1_viewcode" class="example_viewcode"></div>
+        <div id="example_1_tools" class="example_tools"></div>
+        <div id="example_1_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 3 //////////////////////////////////////////////////////////-->
+    <div id="example_2" class="example">
+      <div id="example_2_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(2)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_2_text" class="example_text">
+        <div id="example_2_text_top">
+          <span>
+            <strong id="example_2_title" class="example_title"></strong>
+          </span>
+          <span id="example_2_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_2_viewcode" class="example_viewcode"></div>
+        <div id="example_2_tools" class="example_tools"></div>
+        <div id="example_2_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 4 //////////////////////////////////////////////////////////-->
+    <div id="example_3" class="example">
+      <div id="example_3_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(3)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_3_text" class="example_text">
+        <div id="example_3_text_top">
+          <span>
+            <strong id="example_3_title" class="example_title"></strong>
+          </span>
+          <span id="example_3_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_3_viewcode" class="example_viewcode"></div>
+        <div id="example_3_tools" class="example_tools"></div>
+        <div id="example_3_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 5 //////////////////////////////////////////////////////////-->
+    <div id="example_4" class="example">
+      <div id="example_4_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(4)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_4_text" class="example_text">
+        <div id="example_4_text_top">
+          <span>
+            <strong id="example_4_title" class="example_title"></strong>
+          </span>
+          <span id="example_4_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_4_viewcode" class="example_viewcode"></div>
+        <div id="example_4_tools" class="example_tools"></div>
+        <div id="example_4_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 6 //////////////////////////////////////////////////////////-->
+    <div id="example_5" class="example">
+      <div id="example_5_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(5)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_5_text" class="example_text">
+        <div id="example_5_text_top">
+          <span>
+            <strong id="example_5_title" class="example_title"></strong>
+          </span>
+          <span id="example_5_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_5_viewcode" class="example_viewcode"></div>
+        <div id="example_5_tools" class="example_tools"></div>
+        <div id="example_5_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 7 //////////////////////////////////////////////////////////-->
+    <div id="example_6" class="example">
+      <div id="example_6_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(6)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_6_text" class="example_text">
+        <div id="example_6_text_top">
+          <span>
+            <strong id="example_6_title" class="example_title"></strong>
+          </span>
+          <span id="example_6_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_6_viewcode" class="example_viewcode"></div>
+        <div id="example_6_tools" class="example_tools"></div>
+        <div id="example_6_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 8 //////////////////////////////////////////////////////////-->
+    <div id="example_7" class="example">
+      <div id="example_7_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(7)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_7_text" class="example_text">
+        <div id="example_7_text_top">
+          <span>
+            <strong id="example_7_title" class="example_title"></strong>
+          </span>
+          <span id="example_7_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_7_viewcode" class="example_viewcode"></div>
+        <div id="example_7_tools" class="example_tools"></div>
+        <div id="example_7_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+    
+    <!-- EXAMPLE 9 //////////////////////////////////////////////////////////-->
+    <div id="example_8" class="example">
+      <div id="example_8_image" class="example_image">
+        <button class="example_img_2" onclick="see_more(8)">
+          SEE MORE
+        </button>
+      </div>
+      <div id="example_8_text" class="example_text">
+        <div id="example_8_text_top">
+          <span>
+            <strong id="example_8_title" class="example_title"></strong>
+          </span>
+          <span id="example_8_viewcode" class="example_viewcode">
+          </span>
+        </div>
+        <div id="example_8_viewcode" class="example_viewcode"></div>
+        <div id="example_8_tools" class="example_tools"></div>
+        <div id="example_8_description" class="example_description"><p></p></div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////-->
+  </div>
+  <!-- //////////////////////////////////////////////////////////////////////-->
+</body>
 </html>
 
 <script>
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// create detailed project div
-// onclick = func...values 1:9
-var ID = "";
-var e = "";
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// save a little
+var w = function(value){
+  return document.getElementById(value);
+};
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-function change_ID(value){
-  ID = "project_large" + value;
-  e = document.getElementById(ID);
-}
 
-function display_project_large(value){
-  change_ID("");
-
-  e.style.position = "fixed";
-  e.style.backgroundColor = "rgba(255,255,255,1)";
-  e.style.width = "90%";
-  e.style.height = "90%";
-  e.style.left = "5%";
-  e.style.top = "5%";
-  e.style.zIndex = "501";
-
-  if (value > 0){
-    get_project_content(value);
-  } else {
-    e.innerHTML = "";
-    e.style.backgroundColor = "rgba(0,0,0,0)";
-    e.style.width = "0%";
-    e.style.height = "0%";
-    e.style.zIndex = "-1";
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Project information is found here in the content variable
+var content = [
+  // PROJECT 1 /////////////////////////////////////////////////////////////////
+  // Network File Manager
+  {
+    "title": "Network File Manager"
+    ,"viewcode": ""
+    ,"tools": "NodeJS, Socket.IO"
+    ,"description": "Makes it easier for users to share files and utilize storage space across their network."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/g68s1spsjrho060/network_01_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/vgy7axqxviephvq/network_01.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/3vxyy6r3spyafpz/network_02.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/hphhn02z0umdkv4/network_03.png?dl=0')"
+    ]
   }
-
-  change_ID("_bg");
-  display_project_large_bg(value);
-}
-
-function display_project_large_bg(value){
-  if (value >= 1){
-    e.innerHTML = "";
-    e.style.position = "fixed";
-    e.style.backgroundColor = "rgba(0,0,0,0.8)";
-    e.style.width = "100%";
-    e.style.height = "100%";
-    e.style.zIndex = "500";
-  } else{
-    e.innerHTML = "";
-    e.style.backgroundColor = "rgba(0,0,0,0)";
-    e.style.width = "0%";
-    e.style.height = "0%";
-    e.style.zIndex = "-1";
-
-    change_ID("");
-    e.innerHTML = "";
-    e.style.backgroundColor = "rgba(0,0,0,0)";
-    e.style.width = "0%";
-    e.style.height = "0%";
-    e.style.zIndex = "-1";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 2 /////////////////////////////////////////////////////////////////
+  // Game #1
+  ,{
+    "title": "Game #1"
+    ,"viewcode": ""
+    ,"tools": "JavaScript"
+    ,"description": "Civilization-like strategy game written in JavaScript."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/ezafxhzqrhn91u4/game1_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/94ysk1o4jgg0csn/civ2.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/cd8wg4yoq16880x/civ1.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/okhl6nz27ffrroa/civ3.png?dl=0')"
+    ]
   }
-}
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PROJECT NAME
-var project_name_static = ["<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td>\
-<td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;", "&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr></table>"];
-var project_name = [];
-project_name[1] = ["Nematode Connectome", "This is an interactive, web-based model, of the neural network of the nematode worm <a href='http://en.wikipedia.org/wiki/Caenorhabditis_elegans' target='_blank'><i>C. elegans</i></a>.  While the worm has two sexes, this model only covers the hermaphrodite."];
-project_name[2] = ["Network File Manager", "Makes it easier for users to share files and utilize storage space across their network. "];
-project_name[3] = ["fMRI Image Analysis", "Web application using PHP / R backend.  Analyzes images for relevant data by detecting differences in color to determine approximate activity levels of the brain."];
-project_name[4] = ["Neuron Models", "This is two different, but nearly identical projects.  Each of the projects represents a type of neuron model to be tested with different neural network architectures."];
-// project_name[5] = ["", ""];
-project_name[6] = ["Calendar UI", "Adds a new front-end user interface for the FullCalendar jQuery library.  The new UI allows faster access to information and is more intuitive than the original UI."];
-project_name[7] = ["Solar System Model", "A simple 3D model of the Solar System made with three.js, a library for WebGL.  Users can freely rotate the model and modify it with some simple options."];
-project_name[8] = ["GUI for FFmpeg", "A graphical user interface (GUI) for the command line-based <a href='http://ffmpeg.org/'' target='_blank'>FFmpeg</a> multimedia editor.  May speed up the user's use of FFmpeg for some uses such as making short clips out of videos."];
-project_name[9] = ["Anthropocene", "<a href='https://en.wikipedia.org/wiki/Civilization_%28series%29' target='_blank'>Civilization</a>-like game written in JavaScript."];
-project_name[10] = ["Breakout Versus", "An HTML5 game with the concept of &quot;<a href='https://en.wikipedia.org/wiki/Pong' target='_blank'>Pong</a> meets <a href='https://en.wikipedia.org/wiki/Breakout_clone' target='_blank'>Breakout</a>.&quot; The game can be played either single player or multiplayer (via Node.js)."];
-project_name[11] = ["Music Suggestor with Visualizer", "Suggests music based on song analyses using the Web Audio API. Includes a music visualizer. "];
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PROJECT TOOLS
-var project_tools_static = ["<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;Tools&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr></table>"];
-var project_tools = [];
-project_tools[1] = "R, MySQL, PHP, JavaScript";
-project_tools[2] = "NodeJS, Socket.IO";
-project_tools[3] = "R, Bioconductor/EBImage, PHP";
-project_tools[4] = "R";
-// project_tools[5] = "JavaScript, HTML"; // UNUSED
-project_tools[6] = "JavaScript, jQuery, CSS";
-project_tools[7] = "three.js";
-project_tools[8] = "JavaScript, Node.js, FFmpeg";
-project_tools[9] = "JavaScript";
-project_tools[10] = "JavaScript, Node.js";
-project_tools[11] = "JavaScript, Web Audio API, Angular.js";
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PROJECT DESCRIPTION
-var project_description_static = ["<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
-How It Works&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr></table><br><br>\
-<table style='position:relative; top:1%; border: 1px solid #000000; border-top-style: none; border-left-style: none; border-right-style: none; width:100%;'><tr style='border: 1px solid #000000;'><td>&nbsp;</td><td style='position:absolute; left:2%; border: 1px solid #000000; border-bottom-style: none; color:#00AAAA; font-size:107%; z-Index: 502; background: #FFFFFF;'>&nbsp;&nbsp;&nbsp;\
-Technical Details&nbsp;&nbsp;&nbsp;</td></tr></table><table><tr><td><br>", "</td></tr></table>"];
-var project_description = [];
-project_description[1] = ["Users can select through any of the neurons in the connectome of the C. elegans hermaphrodite.  The program will then output information about each individual neuron in the appropriate fields as well as display on the HTML5 canvas all of its connections to other neurons in the network.", "The front-end of the application is primarily written in JavaScript.  This portion of the code does all of the drawing to the canvases as well as the user interface.  Whenever a user selects a new neuron, a call is made through the JavaScript via Ajax to a separate back-end PHP script.  This script then performs MySQL queries to pull data for each neuron and outputs this data in text format for the front-end JavaScript to parse through.<p>&nbsp;Although MySQL is used extensively, there is also considerable parsing of some of the MySQL outputs by JavaScript in order to draw the appropriate information onto the canvas elements.<p>&nbsp;R is not used in the web application itself, but is used to scrape project-relevant data from files, where it then formats the data and pushes it into the MySQL database.<p>&nbsp;All data was derived from online sources, especially from <a href='http://www.wormatlas.org' target='_blank'>Worm Atlas</a>."];
-project_description[2] = ["Users run the application from one or more computers on their network.  Each computer running the application will share it's files with other computers running the application.","???"];
-project_description[3] = ["Users simply select the file(s) to be analyzed.  The script will then calculate the approximate levels of activity.  Analyses are output on the left-hand panel and the image of interest is shown on the right-hand panel.", "The R script scans each image pixel-by-pixel looking for RGB values.  These values are stored in matrices which are then calculated against each other to determine specific values for each color.<br><br>Upon running the PHP webpage, the page makes a call to the system to run the script.  The script performs the analyses, and outputs the data in the form of JavaScript.  This JavaScript is executed on the webpage to populate the left and right data panels.<br><br>Example fMRI image credit Wikipedia."];
-project_description[4] = ["Users will be able to specify the type of neuron model and network motif to be used.  The script will then run the program based on these parameters and display the progress of the network activity.", "The scripts are written in R.  Each neuron is represented by a class object, featuring synapses, activity level, and model function.  One or more types of these neuron models are then strung together based on the network architecture (feedforward or circular).  Individual neuron activity levels are drawn on plots, representing membrane voltage vs time."];
-project_description[5] = ["", ""];
-project_description[6] = ["The old UI (top image) allows users to switch between months and views with the click of a button, but requires users to perform a button click for each new month they want to see.  The new UI (middle and bottom images) allows users to rapidly switch between months and years with a single click of their mouse.", "???"];
-project_description[7] = ["Using three.js, a WebGL-based model of the Solar System is made available to the users.  The users can then freely rotate and zoom in and out on the model.  At the same time, options are available to adjust the model based on user preferences.", "The application is written almost entirely in JavaScript.  Three.js is used for the WebGL and OrbitControls.js is used for the camera control.  The camera view is changed with the users mouse where a holding the left mouse button down while dragging the mouse can change the orientation, and where the mousewheel can be used to zoom in and out.  Upon loading the page, the objects automatically begin rotating and/or orbiting.  The options menu at the top is used to customize the model by hiding/removing the objects from the scene.  Phong shading is used.<br><br>Note that while the objects in the model are dynamic, they do not follow real-world orbits or rotations.  Also note that while the planets sizes are relatively to scale, the Sun is not, and neither are the distances from the Sun.<br><br>Images were sourced from the following:<br><br><a href='http://paulbourke.net' target='_blank'>paulbourke.net</a><br>Sun<br><br><a href='http://fossies.org' target='_blank'>fossies.org</a><br>Mercury<br><br><a href='http://maps.jpl.nasa.gov' target='_blank'>maps.jpl.nasa.gov</a><br>Venus, Earth, Mars, Jupiter, Saturn, Neptune<br><br><a href='http://doblevych.com' target='_blank'>doblevych.com</a><br>The Moon<br><br><a href='http://www.youtube.com/watch?v=dlGOyxvrx2A' target='_blank'>vbkingofvideo</a><br>Background stars<br><br>The rest did not require any imagery."];
-project_description[8] = ["Features file conversions, metadata information, and cutting files.", "The application requires that FFmpeg already be installed on the same system.  Users then select from files on their system that they wish to edit in order to change that file or create new ones from it.  All of the back-end work is done in Node.js and Express.js."];
-project_description[9] = ["The game is heavily inspired by Civilzation and other other strategy games, such as <a href='https://en.wikipedia.org/wiki/StarCraft_%28series%29' target='_blank'>StarCraft</a>.", "The entire game is built with plain old vanilla JavaScript, sans libraries, using a large number of div elements.  This is in contrast with other games made with JavaScript that are built using the HTML5 canvas (e.g. my other game Breakout Versus) or WebGL (see my Solar System or Audio Visualizer for some of my WebGL work)."];
-project_description[10] = ["The game is akin to a mash up between Breakout and Pong.  Two players are pitted against each other with procedurally-generated blocks sitting inbetween them.", "The game is written in JavaScript with a Node.js backend server providing the means for multiplayer.  The graphics are drawn using an HTML5 canvas."];
-project_description[11] = ["Users select a song to listen to and the application compares it with other songs in a database to play similar songs.", "The Web Audio API gathers and compares the song's audio with a pre-defined database of other song's information.  As for the visualizer, the song data is filtered through an algorithm which in turn outputs an graphic based on the data."];
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// show same description as the readme file
-function get_project_content(value){
-  if (value === 1){
-    var img_1 = "https://dl.dropboxusercontent.com/s/g51kxcm4b6h2gul/nematode_2016_1.png";
-    var img_2 = "https://dl.dropboxusercontent.com/s/zjstnljsslc5dxt/nematode_2016_2.png";
-    var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-
-    project_url = "http://www.github.com/rrod/nematode_connectome";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 3 /////////////////////////////////////////////////////////////////
+  // Game #2
+  ,{
+    "title": "Game #2"
+    ,"viewcode": ""
+    ,"tools": "JavaScript, Node.js"
+    ,"description": "A multiplayer HTML5 game with the concept of \"Pong meets Breakout.\""
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/efrt4rz5f5cjkrb/game2_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/y4cwo1ix0o2rmw9/game2.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/atidvzrjq5yo0dj/breakoutversus4.png?dl=0')"
+      ,"url('')"
+    ]
   }
-  if (value === 2){
-    var img_1 = "https://dl.dropboxusercontent.com/s/r7j53j6auzqp9ip/network_01.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/3tv1848wdkpt2r3/network_02.png?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/ylley1v8afdf2x2/network_03.png?dl=0";
-
-    project_url = "http://www.github.com/rrod/procedural_NN";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 4 /////////////////////////////////////////////////////////////////
+  // Calendar UI
+  ,{
+    "title": "Calendar UI"
+    ,"viewcode": ""
+    ,"tools": "JavaScript, jQuery"
+    ,"description": "Adds a new front-end user interface for the FullCalendar jQuery library."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/f9fwcqmqrn7j57v/calendar_new_01_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/ri831jqvcnkny36/calendar_new_01.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/ige17rlhn42o9f6/calendar_old_01.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/nkyh4z4sqzck79v/calendar_new_03.png?dl=0')"
+    ]
   }
-  if (value === 3){
-    var img_1 = "https://dl.dropboxusercontent.com/s/zuu31bgiy9yuhee/fmri_01.jpg?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/v5rx0h0uxkdqnlb/fmri_02.jpg?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-
-    project_url = "http://www.github.com/rrod/MRI";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 5 /////////////////////////////////////////////////////////////////
+  // Digital Animal Brain
+  ,{
+    "title": "Digital Animal Brain"
+    ,"viewcode": "https://www.github.com/rrod/nematode_connectome"
+    ,"tools": "R, MySQL, PHP, JavaScript"
+    ,"description": "Interactive web-based model of the nervous system of the worm C. elegans."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/rudxbrwyq7xm58g/nematode_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/bmb3dxb4mbfhpsb/nematode.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/zjstnljsslc5dxt/nematode_2016_2.png')"
+      ,"url('')"
+    ]
   }
-  if (value === 4){
-    var img_1 = "https://dl.dropboxusercontent.com/s/shucn5hjwabvr6i/neuron_models_4.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-
-    project_url = "http://www.github.com/rrod/nematode_connectome";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 6 /////////////////////////////////////////////////////////////////
+  // 3D Solar System
+  ,{
+    "title": "3D Solar System"
+    ,"viewcode": "https://www.github.com/rrod/solar_system"
+    ,"tools": "three.js / WebGL"
+    ,"description": "Interactive 3D web application of the Solar System."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/voad2ljp953m47t/solar_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/9exd1co6ze6k11z/solar.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/oga27ebcrhkn974/2ss.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/y3gva5c25l6n9no/3ss.png?dl=0')"
+    ]
   }
-  // if (value === 5){
-  //   var img_1 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-  //   var img_2 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-  //   var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-  //
-  //   project_url = "http://www.github.com/rrod/nematode_connectome";
-  // }
-  if (value === 6){
-    var img_1 = "https://dl.dropboxusercontent.com/s/1sq5ibvql2vaw1x/calendar_old_01.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/98jgcain0c64g79/calendar_new_01.png?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/bokk0ym4uh9p5yn/calendar_new_03.png?dl=0";
-
-    project_url = "http://www.github.com/rrod/nematode_connectome";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 7 /////////////////////////////////////////////////////////////////
+  // FFmpeg UI
+  ,{
+    "title": "FFmpeg UI"
+    ,"viewcode": ""
+    ,"tools": "JavaScript, Node.js, FFmpeg"
+    ,"description": "A user interface for the command line-based FFmpeg multimedia editor."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/kgndofz5k6yi83j/ffmpeg_01_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/304skvwk7ve71ro/ffmpeg_01.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/kyh6e83a56eo9es/ffmpeg_02.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/1qn91sn2fkwraot/ffmpeg_03.png?dl=0')"
+    ]
   }
-  if (value === 7){
-    var img_1 = "https://dl.dropboxusercontent.com/s/h82otobdd196shp/1ss.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/oga27ebcrhkn974/2ss.png?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/y3gva5c25l6n9no/3ss.png?dl=0";
-
-    project_url = "http://www.github.com/rrod/solar_system";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 8 /////////////////////////////////////////////////////////////////
+  // Music Finder
+  ,{
+    "title": "Music Finder"
+    ,"viewcode": ""
+    ,"tools": "JavaScript, Web Audio API, Angular.js"
+    ,"description": "Suggests music based on song analyses using the Web Audio API. Includes a music visualizer."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/17sp44arak8cooj/music_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/0pr31evfcmq6dhn/music.png?dl=0')"
+      ,"url('')"
+      ,"url('')"
+    ]
   }
-  if (value === 8){
-    var img_1 = "https://dl.dropboxusercontent.com/s/jdhk2kbbjjoz9gc/tmp_ffmpeg22.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/7ln8wo5ujkzqlvr/tmp_ffmpeg24.png?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-
-    project_url = "http://www.github.com/rrod/???";
+  //////////////////////////////////////////////////////////////////////////////
+  
+  // PROJECT 9 /////////////////////////////////////////////////////////////////
+  // KOREAN
+  ,{
+    "title": "Learn Korean"
+    ,"viewcode": ""
+    ,"tools": "JavaScript, PWA"
+    ,"description": "Flashcard / memorization service built as a progressive web app (PWA)."
+    
+    ,"images": [
+      "url('https://dl.dropboxusercontent.com/s/8ut642nbpjuzezi/korea_02_low.jpg?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/7piui84o80u5ydm/korea_02.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/a37mifmqyrw5swi/korea_mobile_01.png?dl=0')"
+      ,"url('https://dl.dropboxusercontent.com/s/udjs3xvfwlkd4b7/korea_mobile_02.png?dl=0')"
+    ]
   }
-  if (value === 9){
-    var img_1 = "https://dl.dropboxusercontent.com/s/cd8wg4yoq16880x/civ1.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/94ysk1o4jgg0csn/civ2.png?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/okhl6nz27ffrroa/civ3.png?dl=0";
-
-    project_url = "http://www.github.com/rrod/???";
-  }
-  if (value === 10){
-    var img_1 = "https://dl.dropboxusercontent.com/s/9kl991knzo6hxyj/breakoutversus2.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/atidvzrjq5yo0dj/breakoutversus4.png?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-
-    project_url = "http://www.github.com/rrod/???";
-  }
-  if (value === 11){
-    var img_1 = "https://dl.dropboxusercontent.com/s/s6n7oejcmz8tz2p/tmp_music2.png?dl=0";
-    var img_2 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-    var img_3 = "https://dl.dropboxusercontent.com/s/76rqfy6qjmvdrih/blank.jpg?dl=0";
-
-    project_url = "http://www.github.com/rrod/???";
-  }
-    e.innerHTML = "\
-    <div style='width:64%; height:100%; float:left; color:#000000; text-align:justify; border-width: 5; border-color: rgba(0,0,40,1); border-right-style: solid; overflow-y:auto;'>\
-    " + project_name_static[0] + project_name[value][0] + project_name_static[1] + project_name[value][1] + project_name_static[2] + "\
-    <br><br>\
-    " + project_tools_static[0] + project_tools[value] + project_tools_static[1] + "\
-    <br>\
-    &nbsp;" + project_description_static[0] + project_description[value][0] + project_description_static[1] + project_description[value][1] + project_description_static[2] + "\
-    <hr><p style='text-align:center;'><a href='#' onclick='display_project_large_bg(0)'>Return to Portfolio</a>\
-    </div>\
-    <div style='width:35%; height:100%; border-width: 3; border-color: #8888FF; border-left-style: solid; overflow-y:auto;'><center><br>\
-    &nbsp;<a href='" + img_1 + "' target='_blank'><img src=" + img_1 + " class='project_large_img'></a> \
-    <br><br>&nbsp;<a href='" + img_2 + "' target='_blank'><img src=" + img_2 + " class='project_large_img'></a> \
-    <br><br>&nbsp;<a href='" + img_3 + "' target='_blank'><img src=" + img_3 + " class='project_large_img'></a><br><br> \
-    </div>";
-}
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+];
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ABOUT / CONTACT
-var about_me_bottom = document.createElement("div");
-  about_me_bottom.id = "about_me_bottom";
-  about_me_bottom.style.position = "fixed";
-  about_me_bottom.style.top = "0%";
-  about_me_bottom.style.left = "0%";
-  about_me_bottom.style.width = "0%";
-  about_me_bottom.style.height = "100%";
-  about_me_bottom.style.background = "rgba(0,0,0,0.8)";
-  about_me_bottom.style.zIndex = 500;
-  about_me_bottom.style.overflowY = "auto";
-  about_me_bottom.onclick = function(){ about_me(0); }
-  document.body.appendChild(about_me_bottom);
-
-var about_me_top = document.createElement("div");
-  about_me_top.id = "about_me_top";
-  about_me_top.style.position = "fixed";
-  about_me_top.style.top = "5%";
-  about_me_top.style.left = "5%";
-  about_me_top.style.width = "0%";
-  about_me_top.style.height = "90%";
-  about_me_top.style.background = "#FFF";
-  about_me_top.style.zIndex = 501;
-  about_me_top.style.overflowY = "auto";
-  document.body.appendChild(about_me_top);
-
-function about_me(value){
-  if (value <= 0){
-    document.getElementById("about_me_bottom").style.width = 0;
-
-    document.getElementById("about_me_top").style.width = 0;
-    document.getElementById("about_me_top").innerHTML = "";
-  }else{
-    document.getElementById("about_me_bottom").style.width = "100%";
-
-    document.getElementById("about_me_top").style.width = "90%";
-    document.getElementById("about_me_top").innerHTML = "\
-    <div style='position:relative; left: 2.5%; top: 5%; width: 69%; background-color:#FFFFFF; color:#000000; text-align:left;'>\
-    <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Profile</font><br>\
-      Hey there!  I'm Rudy, and I enjoy creating web applications.<br><br>\
-      What this means is that I make software for the Internet.  Previously this work had mostly centered on scientific applications, but I have since broadened my talent into a generalist developer.<br><br>\
-      Some examples of what I have done can be found here in my portfolio.<br><br>\
-      Although this software has been my primary focus for about a year now, I have also been writing scripts, websites, and other closely-related works for general use and fun for over three years.<br><br>\
-      R and JavaScript are my go-to programming languages, but I often incorporate other languages and tools within my work.<br><br><br>\
-      <!--<font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Education</font><br>\
-      I completed my Bachelor's degree in Biology at Saint Louis University, where I concentrated in cell biology and neuroscience. After finishing, I have continued to pursue my work and have been coding and modeling neuronal systems ever since.<br><br>\
-      My programming skills are almost entirely self-taught where they were developed from a hobbyist level to a career tool.-->\
-      <br><br><hr><center>\
-      For inquiries please contact me at <a href='mailto:rrod.git@outlook.com'>rrod.git@outlook.com</a>.\
-      <hr><p style='text-align:center;'>\
-      <a href='#' onclick='about_me(0)'>Return to Portfolio</a>\
-    </div>\
-    <div style='position:absolute; left: 72%; top: 5%; width: 25.5%; background-color:#FFFFFF; color:#000000; text-align:center;'>\
-      <!--<font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Programming</font><br>\
-      JavaScript<br>\
-      R<br>\
-      HTML / CSS<br>\
-      PHP / Node.js<br>\
-      MySQL\
-      <br><br>\
-      <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>Knowledge</font><br>\
-      Web Applications<br>\
-      Web Development\
-      <br><br>-->\
-      <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>What I Can Do</font><br>\
-      Web Applications<br>\
-      Web Development\
-      <br><br>\
-      <font style='color:#00AAAA; font-weight:bold; font-size:125%;'>How I Can Do It</font><br>\
-      JavaScript<br>\
-      R<br>\
-      HTML / CSS<br>\
-      Bootstrap<br>\
-      PHP / Node.js<br>\
-      MySQL<br>\
-      Libraries<br>\
-      Frameworks<br>\
-    </div>\
-    </div>\
-    <!--<div style='position:relative; bottom: 0; left:0%; width: 100%; background-color:#FFFFFF; color:#000000; text-align:center;'>\
-      <hr size=1 style='position:relative; left:0%; width:95%;'>\
-      For inquiries please contact me at <a href='mailto:rrod.git@outlook.com'>rrod.git@outlook.com</a>.\
-      <hr size=1 style='position:relative; left:0%; width:95%;'>\
-      <p style='text-align:center;'><a href='#' onclick='about_me(0);'>Return to Portfolio</a>\
-    </div>-->";
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// populate the html with content
+function populate(value){
+  w("example_" + value + "_image").style.backgroundImage = content[value].images[0];
+  w("example_" + value + "_title").innerHTML = content[value].title;
+  w("example_" + value + "_tools").innerHTML = content[value].tools;
+  w("example_" + value + "_description").firstChild.innerHTML = content[value].description;
+  
+  // create a link to the github code only if there is a link the content var
+  if (content[value].viewcode){
+    w("example_" + value + "_viewcode").innerHTML = 
+    "<a href='" + content[value].viewcode + "'>View Code</a>";
   }
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// create see_more window and its elements
+function create_see_more_window(){
+  //////////////////////////////////////////////////////////////////////////////
+  // create the window
+  var create = document.createElement("div");
+    create.id = "see_more_window";
+    document.body.appendChild(create);
+  //////////////////////////////////////////////////////////////////////////////
+  
+  //////////////////////////////////////////////////////////////////////////////
+  // left and right arrows
+  var create = document.createElement("button");
+    create.id = "see_more_window_img_left";
+    create.style.left = "1%";
+    create.innerHTML = "<";
+    create.onclick = function(){
+      see_more_change_img("left");
+    }
+    w("see_more_window").appendChild(create);
+    
+  var create = document.createElement("button");
+    create.id = "see_more_window_img_right";
+    create.style.right = "1%";
+    create.innerHTML = ">";
+    create.onclick = function(){
+      see_more_change_img("right");
+    }
+    w("see_more_window").appendChild(create);
+  //////////////////////////////////////////////////////////////////////////////
+  
+  //////////////////////////////////////////////////////////////////////////////
+  // dots
+  var create = document.createElement("div");
+    create.id = "see_more_window_img_dot";
+    create.innerHTML = 
+      "\
+      <div id='see_more_window_img_dot_0' onclick='see_more_change_img(0)'></div>\
+      <div id='see_more_window_img_dot_1' onclick='see_more_change_img(1)'></div>\
+      <div id='see_more_window_img_dot_2' onclick='see_more_change_img(2)'></div>\
+      <div id='close'>CLOSE</div>\
+      ";
+    w("see_more_window").appendChild(create);
+    w("close").onclick = function(){
+      see_more("close");
+    }
+  //////////////////////////////////////////////////////////////////////////////
+  
+  //////////////////////////////////////////////////////////////////////////////
+  // create the divs that will hold the images for the window element
+  for (var i = 0; i < 3; i++){
+    var create = document.createElement("div");
+      create.id = "see_more_window_img_" + i;
+      create.className = "window_img";
+      w("see_more_window").appendChild(create);
+  }
+  // put the first one on top
+  w("see_more_window_img_0").style.zIndex = 1003;
+  //////////////////////////////////////////////////////////////////////////////
+  
+  //////////////////////////////////////////////////////////////////////////////
+  // add description element
+  var create = document.createElement("div");
+    create.id = "see_more_window_description";
+    w("see_more_window").appendChild(create);
+  //////////////////////////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// changes visibility of the see more window and adds images to it
+function see_more(value){
+  if (value === "close"){
+    // reset the circle images upon closing to fix a visual bug
+    w("see_more_window_img_dot_0").style.backgroundImage = "url('./test_img/circle_0.png')";
+    w("see_more_window_img_dot_1").style.backgroundImage = "url('./test_img/circle_0.png')";
+    w("see_more_window_img_dot_2").style.backgroundImage = "url('./test_img/circle_0.png')";
+    
+    w("see_more_window").style.visibility = "hidden";
+    return;
+  }
+  
+  if (value === undefined){
+    value = 0;
+  }
+  w("see_more_window").style.visibility = "visible";
+  
+  // set the description
+  w("see_more_window_description").innerHTML = 
+    w("example_" + value + "_text").innerHTML;
+  
+  // make the first circle seen as active (blue circle)
+  w("see_more_window_img_dot_0").style.backgroundImage = "url('./test_img/circle_1.png')";
+    
+  // get number of images associated with the project
+  var num_images = content[value].images.length;
+  
+  // populate the image elements with images
+  if (num_images > 1){
+    for (var i = 1; i <= (num_images - 1); i++){
+      if (content[value].images[i].search("mobile") > -1){
+        w("see_more_window_img_" + (i - 1)).style.backgroundSize = "contain";
+      }else{
+        w("see_more_window_img_" + (i - 1)).style.backgroundSize = "100% 100%";
+      }
+      w("see_more_window_img_" + (i - 1)).style.backgroundImage = content[value].images[i];
+    }
+  }
+}
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// adds the navigation buttons to the see more window
+function see_more_change_img(value){
+  // for left and right arrows
+  if (value === "left"){
+    for (var i = 0; i < 3; i++){
+      if (parseInt(w("see_more_window_img_" + i).style.zIndex) === 1003){
+        if (i > 0){
+          value = (i - 1);
+        }else{
+          value = 2;
+        }
+        i = 3;
+      }
+    }
+  }
+  
+  if (value === "right"){
+    value = 0;
+    for (var i = 0; i < 2; i++){
+      if (i < 2){
+        if (parseInt(w("see_more_window_img_" + i).style.zIndex) === 1003){
+          value = (i + 1);
+        }
+      }else{
+        value = 0;
+      }
+    }
+  }
+  
+  // reset current image
+  for (var i = 0; i < 3; i++){
+    w("see_more_window_img_" + i).style.zIndex = 1002;
+    w("see_more_window_img_dot_" + i).style.backgroundImage = "url('./test_img/circle_0.png')";
+  }
+  
+  // bring new image forward
+  w("see_more_window_img_" + value).style.zIndex = 1003;
+  w("see_more_window_img_dot_" + value).style.backgroundImage = "url('./test_img/circle_1.png')";
+}
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// allows users to use the ESC key to close the see more window
+function get_keyboard_input(){
+  document.onkeydown = handleKeyDown;
+  document.onkeyup = handleKeyUp;
+
+  var currentlyPressedKeys = {};
+
+  function handleKeyDown(event) {
+    currentlyPressedKeys[event.keyCode] = true;
+    handleKeys();
+  }
+
+  function handleKeyUp(event) {
+    currentlyPressedKeys[event.keyCode] = false;
+  }
+
+  function handleKeys(){
+    // escape out of the see more window
+    if (currentlyPressedKeys[27]){
+      if (w("see_more_window").style.visibility === "visible"){
+        see_more("close");
+      }
+    }
+  }
+}
+get_keyboard_input();
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// JavaScript code starts running from here
+(function run(){
+  for (var i = 0; i < 3; i++){
+    populate(i);
+  }
+  var one = setTimeout(function(){
+    for (var i = 3; i < 6; i++){
+      populate(i);
+    }
+  }, 150);
+  var two = setTimeout(function(){
+    for (var i = 6; i < 9; i++){
+      populate(i);
+    }
+  }, 300);
+})();
+
+// start loading the full size images after the page has fully loaded
+window.onload = function(){
+  create_see_more_window();
+  
+  for (var i = 0; i < 3; i++){
+    w("example_" + i + "_image").style.backgroundImage = 
+      content[i].images[1];
+  }
+  
+  var first = setTimeout(function(){
+    for (var i = 0; i < 3; i++){
+      w("example_" + (i + 3) + "_image").style.backgroundImage = 
+        content[i + 3].images[1];
+    }
+  }, 500);
+  
+  var second = setTimeout(function(){
+    for (var i = 0; i < 3; i++){
+      w("example_" + (i + 6) + "_image").style.backgroundImage = 
+        content[i + 6].images[1];
+    }
+  }, 1000);
+}
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 </script>
