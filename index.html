@@ -202,7 +202,6 @@
       height: 50%;
       margin: 1%;
       
-      background-image: url("./test_img/circle_0.png");
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center center;
@@ -756,9 +755,9 @@ function create_see_more_window(){
 function see_more(value){
   if (value === "close"){
     // reset the circle images upon closing to fix a visual bug
-    w("see_more_window_img_dot_0").style.backgroundImage = "url('./test_img/circle_0.png')";
-    w("see_more_window_img_dot_1").style.backgroundImage = "url('./test_img/circle_0.png')";
-    w("see_more_window_img_dot_2").style.backgroundImage = "url('./test_img/circle_0.png')";
+    w("see_more_window_img_dot_0").style.backgroundImage = "url('" + dots[1].src + "')";
+    w("see_more_window_img_dot_1").style.backgroundImage = "url('" + dots[1].src + "')";
+    w("see_more_window_img_dot_2").style.backgroundImage = "url('" + dots[1].src + "')";
     
     w("see_more_window").style.visibility = "hidden";
     return;
@@ -774,7 +773,7 @@ function see_more(value){
     w("example_" + value + "_text").innerHTML;
   
   // make the first circle seen as active (blue circle)
-  w("see_more_window_img_dot_0").style.backgroundImage = "url('./test_img/circle_1.png')";
+  w("see_more_window_img_dot_0").style.backgroundImage = "url('" + dots[0].src + "')";
     
   // get number of images associated with the project
   var num_images = content[value].images.length;
@@ -829,12 +828,12 @@ function see_more_change_img(value){
   // reset current image
   for (var i = 0; i < 3; i++){
     w("see_more_window_img_" + i).style.zIndex = 1002;
-    w("see_more_window_img_dot_" + i).style.backgroundImage = "url('./test_img/circle_0.png')";
+    w("see_more_window_img_dot_" + i).style.backgroundImage = "url('" + dots[1].src + "')";
   }
   
   // bring new image forward
   w("see_more_window_img_" + value).style.zIndex = 1003;
-  w("see_more_window_img_dot_" + value).style.backgroundImage = "url('./test_img/circle_1.png')";
+  w("see_more_window_img_dot_" + value).style.backgroundImage = "url('" + dots[0].src + "')";
 }
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -891,6 +890,7 @@ get_keyboard_input();
   }, 300);
 })();
 
+var dots = [];
 // start loading the full size images after the page has fully loaded
 window.onload = function(){
   create_see_more_window();
@@ -913,6 +913,16 @@ window.onload = function(){
         content[i + 6].images[1];
     }
   }, 1000);
+    
+  var get_dots = setTimeout(function(){
+    dots[0] = document.createElement("img");
+      dots[0].src = 'https://dl.dropboxusercontent.com/s/mpdtacffj8bs6ts/circle_1.png?dl=0';
+      w("see_more_window_img_dot_0").style.backgroundImage = "url('" + dots[0].src + "')";
+    dots[1] = document.createElement("img");
+    dots[1].src = 'https://dl.dropboxusercontent.com/s/9vljbn8yn3yc0t0/circle_0.png?dl=0';
+      w("see_more_window_img_dot_1").style.backgroundImage = "url('" + dots[1].src + "')";
+      w("see_more_window_img_dot_2").style.backgroundImage = "url('" + dots[1].src + "')";
+  }, 200);
 }
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
