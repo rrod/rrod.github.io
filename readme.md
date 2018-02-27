@@ -1,3 +1,3 @@
-Portfolio version of my GitHub.  It includes screenshots and descriptions of each repository, as well as a section about myself.
+Personal portfolio.  It includes screenshots and descriptions of sample projects.
 
-http://rrod.github.io
+https://rrod.github.io
